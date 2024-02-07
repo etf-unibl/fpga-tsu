@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ieee_0',['ieee',['../classcounter.html#a0a6af6eef40212dbaf130d57ce711256',1,'counter']]],
-  ['increment_5fnanotime_1',['increment_nanotime',['../classcounter_1_1arch.html#a7d43fc83d22503586b5ff85253a554ca',1,'counter::arch']]]
+  ['detection_5flogic_0',['detection_logic',['../classdetection__logic.html',1,'']]],
+  ['detection_5flogic_2evhd_1',['detection_logic.vhd',['../detection__logic_8vhd.html',1,'']]]
 ];
