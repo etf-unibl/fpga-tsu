@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['std_5flogic_5f1164_0',['std_logic_1164',['../classcounter.html#acd03516902501cd1c7296a98e22c6fcb',1,'counter.std_logic_1164'],['../classdetection__logic.html#acd03516902501cd1c7296a98e22c6fcb',1,'detection_logic.std_logic_1164']]]
+  ['reg_0',['reg',['../classreg__map_1_1arch.html#ad53b1ff8af38a0fc111be7b9fd536191',1,'reg_map::arch']]],
+  ['rst_5fi_1',['rst_i',['../classcounter.html#ab86c7a8eec3a8327e506892977f85708',1,'counter']]]
 ];
