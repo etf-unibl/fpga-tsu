@@ -37,11 +37,11 @@
 -- OTHER DEALINGS IN THE SOFTWARE
 -----------------------------------------------------------------------------
 
-!-- Use standard library
+--! Use standard library
 library ieee;
-!-- Use logic elements
+--! Use logic elements
 use ieee.std_logic_1164.all;
-!-- Use integer types
+--! Use integer types
 use ieee.numeric_std.all;
 
 --! This is a synchronous design that, as a port, has one-bit input on which digital waveform is brought.
@@ -70,16 +70,16 @@ begin
   process(clk_i)
   begin
     if rising_edge(clk_i) then
-      if input /= current_value then
+      if input_i /= current_value then
         we_temp <= '1';
       else
         we_temp <= '0';
       end if;
-      current_value <= input;
+      current_value <= input_i;
     end if;
   end process;
 
   --! Output logic
   ts_value_o <= "0000000000000000000000000000000" & current_value;
-  we <= we_temp;
+  we_o <= we_temp;
 end arch;
