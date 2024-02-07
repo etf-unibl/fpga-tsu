@@ -4,5 +4,5 @@ var searchData=
   ['reg_2evhd_1',['reg.vhd',['../reg_8vhd.html',1,'']]],
   ['reg_5fmap_2',['reg_map',['../classreg__map.html',1,'']]],
   ['reg_5fmap_2evhd_3',['reg_map.vhd',['../reg__map_8vhd.html',1,'']]],
-  ['rst_5fi_4',['rst_i',['../classcounter.html#ab86c7a8eec3a8327e506892977f85708',1,'counter']]]
+  ['rst_5fi_4',['rst_i',['../classcounter.html#ab86c7a8eec3a8327e506892977f85708',1,'counter.rst_i'],['../classreg.html#ab86c7a8eec3a8327e506892977f85708',1,'reg.rst_i'],['../classreg__map.html#ab86c7a8eec3a8327e506892977f85708',1,'reg_map.rst_i']]]
 ];
