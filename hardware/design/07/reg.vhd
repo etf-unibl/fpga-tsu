@@ -48,8 +48,9 @@ use ieee.std_logic_1164.all;
 entity reg is
   port(
   clk_i  : in  std_logic;                     --! clk_i - clock signal
+  rst_i  : in  std_logic;                     --! rst_i - reset signal
   data_i : in  std_logic_vector(31 downto 0); --! data_i - input data
-  data_o : out std_logic_vector(31 downto 0) --! data_o - output data
+  data_o : out std_logic_vector(31 downto 0)  --! data_o - output data
 );
 end reg;
 
@@ -59,9 +60,12 @@ architecture arch of reg is
   signal data_out : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
 begin
 --! data_o becomes the input value after every rising edge
+--! rst_i is an asynchronous reset
   process(clk_i)
   begin
-    if rising_edge(clk_i) then
+    if rst_i = '1' then
+      data_out <= (others => '0');
+    elsif rising_edge(clk_i) then
       data_out <= data_i;
     end if;
   end process;

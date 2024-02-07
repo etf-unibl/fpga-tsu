@@ -49,13 +49,14 @@ use ieee.std_logic_1164.all;
 --! and for the 2 counters in the design
 entity reg_map is
   port(
-  clk_i     : in  std_logic;
-  value_i   : in  std_logic_vector(31 downto 0);
-  ts_high_i : in  std_logic_vector(31 downto 0);
-  ts_low_i  : in  std_logic_vector(31 downto 0);
-  value_o   : out std_logic_vector(31 downto 0);
-  ts_high_o : out std_logic_vector(31 downto 0);
-  ts_low_o  : out std_logic_vector(31 downto 0)
+  clk_i     : in  std_logic;                     --! clk_i - clock signal
+  rst_i     : in  std_logic;                     --! rst_i - asynchronous reset
+  value_i   : in  std_logic_vector(31 downto 0); --! value_i - input for value register
+  ts_high_i : in  std_logic_vector(31 downto 0); --! ts_high_i - input for Unix counter register
+  ts_low_i  : in  std_logic_vector(31 downto 0); --! ts_low_i - input for nanoseconds counter register
+  value_o   : out std_logic_vector(31 downto 0); --! value_o - output for value register
+  ts_high_o : out std_logic_vector(31 downto 0); --! ts_high_o - output for Unix counter register
+  ts_low_o  : out std_logic_vector(31 downto 0)  --! ts_low_o - output for nanoseconds counter register
 );
 end reg_map;
 
@@ -65,6 +66,7 @@ architecture arch of reg_map is
   component reg is
     port(
     clk_i  : in std_logic;
+    rst_i  : in std_logic;
     data_i : in std_logic_vector(31 downto 0);
     data_o : out std_logic_vector(31 downto 0)
     );
@@ -72,16 +74,19 @@ architecture arch of reg_map is
 begin
   reg1 : reg port map(
   clk_i  => clk_i,
+  rst_i  => rst_i,
   data_i => value_i,
   data_o => value_o
   );
   reg2 : reg port map(
   clk_i  => clk_i,
+  rst_i  => rst_i,
   data_i => ts_high_i,
   data_o => ts_high_o
   );
   reg3 : reg port map(
   clk_i  => clk_i,
+  rst_i  => rst_i,
   data_i => ts_low_i,
   data_o => ts_low_o
   );
