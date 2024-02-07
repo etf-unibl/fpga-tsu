@@ -11,24 +11,24 @@ architecture arch of detection_logic_tb is
   component detection_logic
     port(
        clk_i : in std_logic;
-        input : in std_logic;
+        input_i : in std_logic;
         ts_value_o: out std_logic_vector(31 downto 0);
-        we : out std_logic
+        we_o : out std_logic
       );
     end component;
     
     signal clk_i :  std_logic;
-    signal input : std_logic;
+    signal input_i : std_logic;
     signal ts_value_o: std_logic_vector(31 downto 0);
-    signal we : std_logic;
+    signal we_o : std_logic;
 
 begin
   
   dc : detection_logic port map(
         clk_i => clk_i,
-          input => input,
+          input_i => input_i,
           ts_value_o => ts_value_o,
-          we => we
+          we_o => we_o
         );
         
         
@@ -44,31 +44,31 @@ begin
     process 
     begin
   
-      input <= '0';
+      input_i <= '0';
       wait for 60 ns;
     
-      input <= '1';
+      input_i <= '1';
       wait for 80 ns;
       
-      input <= '0';
+      input_i <= '0';
       wait for 20 ns;
       
-      input <= '1';
+      input_i <= '1';
       wait for 20 ns;
       
-      input <= '0';
+      input_i <= '0';
       wait for 20 ns;
       
-      input <= '1';
+      input_i <= '1';
       wait for 20 ns;
       
-      input <= '0';
+      input_i <= '0';
       wait for 20 ns;
       
-      input <= '1';
+      input_i <= '1';
       wait for 20 ns;
     
-      input <= '0';
+      input_i <= '0';
       wait for 20 ns;
           
       wait;
@@ -79,52 +79,52 @@ begin
     begin
         
         wait for 5 ns;
-        assert (we = '1') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '1') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 15 ns;
-        assert (we = '0') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '0') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '0') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '0') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '0') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '0') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '1') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '1') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '0') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '0') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '0') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '0') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '0') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '0') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '1') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '1') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '1') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '1') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '1') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '1') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '1') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '1') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '1') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '1') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '1') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '1') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '1') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '1') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         wait for 20 ns;
-        assert (we = '0') report "Error. Expected 1, Actual " & std_logic'image(we) severity error;
+        assert (we_o = '0') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         report "Test completed";
         
