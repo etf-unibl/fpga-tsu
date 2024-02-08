@@ -61,7 +61,7 @@ architecture arch of reg is
 begin
 --! data_o becomes the input value after every rising edge
 --! rst_i is an asynchronous reset
-  process(clk_i)
+  process(clk_i, rst_i)
   begin
     if rst_i = '1' then
       data_out <= (others => '0');
@@ -69,5 +69,7 @@ begin
       data_out <= data_i;
     end if;
   end process;
+  
+  --! Output logic
   data_o <= data_out;
 end arch;
