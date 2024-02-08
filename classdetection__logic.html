@@ -105,8 +105,8 @@ Ports</h2></td></tr>
 <tr class="memdesc:ae8d3e5458b0e3cd523d6461463e36fe8"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock signal input.  <a href="#ae8d3e5458b0e3cd523d6461463e36fe8"></a><br /></td></tr>
 <tr class="memitem:afe34dd0ddbdd59a07fe69c946a7b3041" id="r_afe34dd0ddbdd59a07fe69c946a7b3041"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#afe34dd0ddbdd59a07fe69c946a7b3041">ts_value_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
 <tr class="memdesc:afe34dd0ddbdd59a07fe69c946a7b3041"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output forwarded to timestamp_value register.  <a href="#afe34dd0ddbdd59a07fe69c946a7b3041"></a><br /></td></tr>
-<tr class="memitem:a36926c3ecef95fa1be2bd07b73ac6710" id="r_a36926c3ecef95fa1be2bd07b73ac6710"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a36926c3ecef95fa1be2bd07b73ac6710">we_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memdesc:a36926c3ecef95fa1be2bd07b73ac6710"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Write Enable Output that is set when it's detected state change at the input (0-&gt;1 or 1-&gt;0)  <a href="#a36926c3ecef95fa1be2bd07b73ac6710"></a><br /></td></tr>
+<tr class="memitem:a7b9103843387c3ab3025915d2db27115" id="r_a7b9103843387c3ab3025915d2db27115"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7b9103843387c3ab3025915d2db27115">we_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:a7b9103843387c3ab3025915d2db27115"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Write Enable Output that lowest bit is set on transition.  <a href="#a7b9103843387c3ab3025915d2db27115"></a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is a synchronous design that, as a port, has one-bit input on which digital waveform is brought. There are two output ports. One is 32-bit output that fills timestamp_value register with the value of on the input (0 or 1). The other one is set to one when there is a change on the input that needs to be recognized (0-&gt;1 or 1-&gt;0). </p>
@@ -207,19 +207,19 @@ Ports</h2></td></tr>
 
 </div>
 </div>
-<a id="a36926c3ecef95fa1be2bd07b73ac6710" name="a36926c3ecef95fa1be2bd07b73ac6710"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36926c3ecef95fa1be2bd07b73ac6710">&#9670;&#160;</a></span>we_o</h2>
+<a id="a7b9103843387c3ab3025915d2db27115" name="a7b9103843387c3ab3025915d2db27115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9103843387c3ab3025915d2db27115">&#9670;&#160;</a></span>we_o</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a36926c3ecef95fa1be2bd07b73ac6710">we_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="#a7b9103843387c3ab3025915d2db27115">we_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write Enable Output that is set when it's detected state change at the input (0-&gt;1 or 1-&gt;0) </p>
+<p>Write Enable Output that lowest bit is set on transition. </p>
 
 </div>
 </div>
