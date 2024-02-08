@@ -20,7 +20,7 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
-## DATE    "Wed Feb 07 16:45:42 2024"
+## DATE    "Thu Feb 08 22:10:05 2024"
 
 ##
 ## DEVICE  "5CSEMA5F31C6"
@@ -74,8 +74,8 @@ set_input_delay -clock clk_i_virt -min 0.350 [get_ports {input_i}]
 
 set_output_delay -clock clk_i_virt -max 0.550 [get_ports {ts_value_o[*]}]
 set_output_delay -clock clk_i_virt -min 0.350 [get_ports {ts_value_o[*]}]
-set_output_delay -clock clk_i_virt -max 0.550 [get_ports {we_o}]
-set_output_delay -clock clk_i_virt -min 0.350 [get_ports {we_o}]
+set_output_delay -clock clk_i_virt -max 0.550 [get_ports {we_o[*}]
+set_output_delay -clock clk_i_virt -min 0.350 [get_ports {we_o[*]}]
 
 #**************************************************************
 # Set Clock Groups
@@ -110,4 +110,3 @@ set_output_delay -clock clk_i_virt -min 0.350 [get_ports {we_o}]
 #**************************************************************
 # Set Input Transition
 #**************************************************************
-

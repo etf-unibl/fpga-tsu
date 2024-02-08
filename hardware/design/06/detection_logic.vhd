@@ -46,14 +46,14 @@ use ieee.numeric_std.all;
 
 --! This is a synchronous design that, as a port, has one-bit input on which digital waveform is brought.
 --! There are two output ports. One is 32-bit output that fills timestamp_value register with the value
---! of on the input (0 or 1). The other one is set to one when there is a change 
---! on the input that needs to be recognized (0->1 or 1->0). 
+--! of on the input (0 or 1). The other one is set to one when there is a change
+--! on the input that needs to be recognized (0->1 or 1->0).
 entity detection_logic is
   port(
     input_i      : in  std_logic;                     --! Input port for the waveform
     clk_i        : in  std_logic;                     --! Clock signal input
     ts_value_o   : out std_logic_vector(31 downto 0); --! Output forwarded to timestamp_value register
-    we_o         : out std_logic                      --! Write Enable Output that is set when it's detected state change at the input (0->1 or 1->0)
+    we_o         : out std_logic_vector(31 downto 0)  --! Write Enable Output that lowest bit is set on transition
 );
 end detection_logic;
 
@@ -62,18 +62,19 @@ end detection_logic;
 --! the previous one, output 'we' is set to 1 if there is a transition on the input, and to 0 if there is not.
 --! The other output is constantly updated based on the current value of the input.
 architecture arch of detection_logic is
-    !-- Definition of signals to be used in the design
-    signal current_value : std_logic := '0';
-    signal we_temp       : std_logic := '1';
+    --! Definition of signals to be used in the design
+  signal current_value : std_logic := '0';
+  signal we_temp       : std_logic_vector(31 downto 0) := "00000000000000000000000000000001";
+  signal ts_value_temp : std_logic_vector(31 downto 0) := (others => '0');
 begin
   --! Transition detect logic
   process(clk_i)
   begin
     if rising_edge(clk_i) then
       if input_i /= current_value then
-        we_temp <= '1';
+        we_temp <= "00000000000000000000000000000001";
       else
-        we_temp <= '0';
+        we_temp <= "00000000000000000000000000000000";
       end if;
       current_value <= input_i;
     end if;
