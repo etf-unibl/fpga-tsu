@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['high_5ftemp_0',['high_temp',['../classreg__map_1_1arch.html#a924e7727121c33180838496ee617bf14',1,'reg_map::arch']]]
+  ['ieee_0',['ieee',['../classcounter.html#a0a6af6eef40212dbaf130d57ce711256',1,'counter.ieee'],['../classdetection__logic.html#a0a6af6eef40212dbaf130d57ce711256',1,'detection_logic.ieee'],['../classreg.html#a0a6af6eef40212dbaf130d57ce711256',1,'reg.ieee'],['../classreg__map.html#a0a6af6eef40212dbaf130d57ce711256',1,'reg_map.ieee']]],
+  ['input_5fi_1',['input_i',['../classdetection__logic.html#a08e98688d7a854a5f5c4f4ba1e96fc10',1,'detection_logic']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['std_5flogic_5f1164_0',['std_logic_1164',['../classcounter.html#acd03516902501cd1c7296a98e22c6fcb',1,'counter.std_logic_1164'],['../classdetection__logic.html#acd03516902501cd1c7296a98e22c6fcb',1,'detection_logic.std_logic_1164'],['../classreg.html#acd03516902501cd1c7296a98e22c6fcb',1,'reg.std_logic_1164'],['../classreg__map.html#acd03516902501cd1c7296a98e22c6fcb',1,'reg_map.std_logic_1164']]]
+  ['value_5fi_0',['value_i',['../classreg__map.html#a454bb341499055f90056684d7b879660',1,'reg_map']]],
+  ['value_5fo_1',['value_o',['../classreg__map.html#a105b657ab89164f1d2bd015e64c1a313',1,'reg_map']]]
 ];
