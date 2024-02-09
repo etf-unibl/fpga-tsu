@@ -69,7 +69,7 @@ begin
       data_out <= data_i;
     end if;
   end process;
-  
+
   --! Output logic
   data_o <= data_out;
 end arch;

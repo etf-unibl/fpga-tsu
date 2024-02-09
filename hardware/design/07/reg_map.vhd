@@ -55,7 +55,7 @@ entity reg_map is
   value_i   : in  std_logic_vector(31 downto 0); --! input for value register from detection logic
   ts_high_i : in  std_logic_vector(31 downto 0); --! input for Unix counter register
   ts_low_i  : in  std_logic_vector(31 downto 0); --! input for nanoseconds counter register
-  we_o      : out std_logic_vector(31 downto 0); --! output for we register 
+  we_o      : out std_logic_vector(31 downto 0); --! output for we register
   value_o   : out std_logic_vector(31 downto 0); --! output for value register
   ts_high_o : out std_logic_vector(31 downto 0); --! output for Unix counter register
   ts_low_o  : out std_logic_vector(31 downto 0)  --! output for nanoseconds counter register
@@ -73,9 +73,9 @@ architecture arch of reg_map is
     data_o : out std_logic_vector(31 downto 0)
     );
   end component;
-  
-  signal high_temp, low_temp : std_logic_vector(31 downto 0); 
-  
+
+  signal high_temp, low_temp : std_logic_vector(31 downto 0);
+
 begin
 
   --! register for value
@@ -85,7 +85,7 @@ begin
   data_i => value_i,
   data_o => value_o
   );
-  
+
   --! register for Unix counter
   counter_high_reg : reg port map(
   clk_i  => clk_i,
@@ -93,7 +93,7 @@ begin
   data_i => ts_high_i,
   data_o => high_temp
   );
-  
+
   --! register for nanoseconds counter
   counter_low_reg : reg port map(
   clk_i  => clk_i,
@@ -101,7 +101,7 @@ begin
   data_i => ts_low_i,
   data_o => low_temp
   );
-  
+
   --! second register for Unix counter
   second_counter_high_reg : reg port map(
   clk_i  => clk_i,
@@ -109,7 +109,7 @@ begin
   data_i => high_temp,
   data_o => ts_high_o
   );
-  
+
   --! second register for nanoseconds counter
   second_counter_low_reg : reg port map(
   clk_i  => clk_i,
@@ -117,8 +117,7 @@ begin
   data_i => low_temp,
   data_o => ts_low_o
   );
-  
-  
+
   --! register for we_o value
   we_reg : reg port map(
   clk_i  => clk_i,
@@ -126,5 +125,5 @@ begin
   data_i => we_i,
   data_o => we_o
   );
-  
+
 end arch;
