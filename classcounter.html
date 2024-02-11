@@ -103,6 +103,8 @@ Ports</h2></td></tr>
 <tr class="memdesc:ab86c7a8eec3a8327e506892977f85708"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous reset input.  <a href="#ab86c7a8eec3a8327e506892977f85708"></a><br /></td></tr>
 <tr class="memitem:ae8d3e5458b0e3cd523d6461463e36fe8" id="r_ae8d3e5458b0e3cd523d6461463e36fe8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ae8d3e5458b0e3cd523d6461463e36fe8">clk_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
 <tr class="memdesc:ae8d3e5458b0e3cd523d6461463e36fe8"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock signal input.  <a href="#ae8d3e5458b0e3cd523d6461463e36fe8"></a><br /></td></tr>
+<tr class="memitem:a454bb341499055f90056684d7b879660" id="r_a454bb341499055f90056684d7b879660"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a454bb341499055f90056684d7b879660">value_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:a454bb341499055f90056684d7b879660"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Value to be written into the UNIX counter.  <a href="#a454bb341499055f90056684d7b879660"></a><br /></td></tr>
 <tr class="memitem:a3a9711ba619c90942be9bdb488477bbc" id="r_a3a9711ba619c90942be9bdb488477bbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3a9711ba619c90942be9bdb488477bbc">ts_high_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
 <tr class="memdesc:a3a9711ba619c90942be9bdb488477bbc"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for Unix counter.  <a href="#a3a9711ba619c90942be9bdb488477bbc"></a><br /></td></tr>
 <tr class="memitem:af9e10c559a525ea1cc8a049304aeece6" id="r_af9e10c559a525ea1cc8a049304aeece6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#af9e10c559a525ea1cc8a049304aeece6">ts_low_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
@@ -221,6 +223,22 @@ Ports</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Output for nanoseconds timer. </p>
+
+</div>
+</div>
+<a id="a454bb341499055f90056684d7b879660" name="a454bb341499055f90056684d7b879660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454bb341499055f90056684d7b879660">&#9670;&#160;</a></span>value_i</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a454bb341499055f90056684d7b879660">value_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Value to be written into the UNIX counter. </p>
 
 </div>
 </div>

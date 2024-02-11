@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "acdr",
   2: "cdr",
   3: "ip",
-  4: "cdinrstvw"
+  4: "cdinprstvw"
 };
 
 var indexSectionNames =
