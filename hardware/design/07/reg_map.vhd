@@ -49,20 +49,26 @@ use ieee.std_logic_1164.all;
 --! and for the 2 counters in the design
 entity reg_map is
   port(
-  clk_i     : in  std_logic;                     --! clk_i - clock signal
-  rst_i     : in  std_logic;                     --! rst_i - asynchronous reset
-  value_i   : in  std_logic_vector(31 downto 0); --! value_i - input for value register
-  ts_high_i : in  std_logic_vector(31 downto 0); --! ts_high_i - input for Unix counter register
-  ts_low_i  : in  std_logic_vector(31 downto 0); --! ts_low_i - input for nanoseconds counter register
-  value_o   : out std_logic_vector(31 downto 0); --! value_o - output for value register
-  ts_high_o : out std_logic_vector(31 downto 0); --! ts_high_o - output for Unix counter register
-  ts_low_o  : out std_logic_vector(31 downto 0)  --! ts_low_o - output for nanoseconds counter register
+  clk_i           : in  std_logic;                     --! Clock signal
+  rst_i           : in  std_logic;                     --! Asynchronous reset
+  en_i            : in  std_logic;                     --! Enable signal for writing to value, high and low register
+  value_i         : in  std_logic_vector(31 downto 0); --! Input for value register
+  ts_high_i       : in  std_logic_vector(31 downto 0); --! Input for Unix counter register
+  ts_low_i        : in  std_logic_vector(31 downto 0); --! Input for nanoseconds counter register
+  counter_value_i : in  std_logic_vector(31 downto 0); --! Input for value to be written to Unix counter
+  counter_value_o : out std_logic_vector(31 downto 0); --! Output for value to be written to Unix counter
+  value_o         : out std_logic_vector(31 downto 0); --! Output for value register
+  ts_high_o       : out std_logic_vector(31 downto 0); --! Output for Unix counter register
+  ts_low_o        : out std_logic_vector(31 downto 0)  --! Output for nanoseconds counter register
 );
 end reg_map;
 
 --! @brief Architecture definition of the register map
 --! @details The output of the 3 registers get updated on every rising edge of the clock signal
 architecture arch of reg_map is
+  signal value_temp : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
+  signal ts_high_temp : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
+  signal ts_low_temp : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
   component reg is
     port(
     clk_i  : in std_logic;
@@ -72,22 +78,27 @@ architecture arch of reg_map is
     );
   end component;
 begin
-  reg1 : reg port map(
+  process(clk_i, rst_i)
+  begin
+    if rst_i = '1' then
+      value_temp <= (others => '0');
+      ts_high_temp <= (others => '0');
+      ts_low_temp <= (others => '0');
+    elsif rising_edge(clk_i) then
+      if en_i = '1' then
+        value_temp <= value_i;
+        ts_high_temp <= ts_high_i;
+        ts_low_temp <= ts_low_i;
+      end if;
+    end if;
+  end process;
+  value_o <= value_temp;
+  ts_high_o <= ts_high_temp;
+  ts_low_o <= ts_low_temp;
+  sys_time : reg port map(
   clk_i  => clk_i,
   rst_i  => rst_i,
-  data_i => value_i,
-  data_o => value_o
-  );
-  reg2 : reg port map(
-  clk_i  => clk_i,
-  rst_i  => rst_i,
-  data_i => ts_high_i,
-  data_o => ts_high_o
-  );
-  reg3 : reg port map(
-  clk_i  => clk_i,
-  rst_i  => rst_i,
-  data_i => ts_low_i,
-  data_o => ts_low_o
+  data_i => counter_value_i,
+  data_o => counter_value_o
   );
 end arch;
