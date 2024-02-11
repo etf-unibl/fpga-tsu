@@ -65,7 +65,6 @@ architecture arch of detection_logic is
     --! Definition of signals to be used in the design
   signal current_value : std_logic := '0';
   signal we_temp       : std_logic_vector(31 downto 0) := "00000000000000000000000000000001";
-  signal ts_value_temp : std_logic_vector(31 downto 0) := (others => '0');
 begin
   --! Transition detect logic
   process(clk_i)
@@ -73,10 +72,10 @@ begin
     if rising_edge(clk_i) then
       if input_i /= current_value then
         we_temp <= "00000000000000000000000000000001";
+        current_value <= input_i;
       else
         we_temp <= "00000000000000000000000000000000";
       end if;
-      current_value <= input_i;
     end if;
   end process;
 
