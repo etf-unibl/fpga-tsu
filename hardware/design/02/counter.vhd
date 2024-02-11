@@ -55,6 +55,7 @@ entity counter is
   port(
     rst_i     : in  std_logic;                     --! Asynchronous reset input
     clk_i     : in  std_logic;                     --! Clock signal input
+    value_i   : in  std_logic_vector(31 downto 0); --! Value to be written into the UNIX counter
     ts_high_o : out std_logic_vector(31 downto 0); --! Output for Unix counter
     ts_low_o  : out std_logic_vector(31 downto 0)  --! Output for nanoseconds timer
 );
@@ -71,6 +72,7 @@ architecture arch of counter is
 --! Definition of signals to be used in the design
   signal ts_low_temp  : unsigned(31 downto 0) := (others => '0');
   signal ts_high_temp : unsigned(31 downto 0) := (others => '0');
+  signal prev_value   : std_logic_vector(31 downto 0) := (others => '0');
 begin
   increment_nanotime : process(clk_i, rst_i)
   begin
@@ -83,6 +85,10 @@ begin
         ts_high_temp <= ts_high_temp + 1;
         ts_low_temp <= (others => '0');
       end if;
+      if prev_value /= value_i then
+        ts_high_temp <= unsigned(value_i);
+      end if;
+      prev_value <= value_i;
     end if;
   end process increment_nanotime;
 --! Combinational logic for assignment of outputs
