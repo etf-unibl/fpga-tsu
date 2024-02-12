@@ -18,7 +18,7 @@
 -- suit user's needs .Comments are provided in each section to help the user  
 -- fill out necessary details.                                                
 -- ***************************************************************************
--- Generated on "02/05/2024 14:21:04"
+-- Generated on "02/12/2024 10:01:54"
                                                             
 -- Vhdl Test Bench template for design  :  counter
 -- 
@@ -26,8 +26,8 @@
 -- 
 
 LIBRARY ieee;                                               
-USE ieee.std_logic_1164.all;   
-USE ieee.numeric_std.all;                             
+USE ieee.std_logic_1164.all;  
+USE ieee.numeric_std.all;                              
 
 ENTITY counter_vhd_tst IS
 END counter_vhd_tst;
@@ -38,12 +38,14 @@ SIGNAL clk_i : STD_LOGIC;
 SIGNAL rst_i : STD_LOGIC;
 SIGNAL ts_high_o : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ts_low_o : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL value_i : STD_LOGIC_VECTOR(31 DOWNTO 0);
 COMPONENT counter
 	PORT (
 	clk_i : IN STD_LOGIC;
 	rst_i : IN STD_LOGIC;
-	ts_high_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	ts_low_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+	ts_high_o : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	ts_low_o : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	value_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -53,7 +55,8 @@ BEGIN
 	clk_i => clk_i,
 	rst_i => rst_i,
 	ts_high_o => ts_high_o,
-	ts_low_o => ts_low_o
+	ts_low_o => ts_low_o,
+	value_i => value_i
 	);
 process
 begin
@@ -67,6 +70,21 @@ begin
   end loop;
   wait;
 end process;
+
+process
+begin
+  value_i <= (others => '0');
+  wait for 10 ns;
+  for i in 10 to 30 loop
+    value_i <= std_logic_vector(to_unsigned(i, 32));
+	 wait for 20 ns;
+    for j in 0 to 20 loop
+	   assert (ts_high_o = std_logic_vector(to_unsigned(i, 32))) report "Error ts_high; Expected: " & integer'image(i) & " Actual: " & integer'image(to_integer(unsigned(ts_high_o))) severity failure;
+      report "Successful assertion: ts_high";
+		wait for 20 ns;
+    end loop;
+  end loop;
+end process;
                                          
 always : PROCESS                                              
 -- optional sensitivity list                                  
@@ -78,11 +96,9 @@ BEGIN
       wait for 10 ns;
       assert (ts_low_o = std_logic_vector(to_unsigned(i * 20, 32))) report "Error ts_low; Expected: " & integer'image(i * 20) & " Actual: " & integer'image(to_integer(unsigned(ts_low_o))) severity failure;
       report "Successful assertion: ts_low";
-		assert (ts_high_o = std_logic_vector(to_unsigned(j, 32))) report "Error ts_high; Expected: " & integer'image(j) & " Actual: " & integer'image(to_integer(unsigned(ts_high_o))) severity failure;
-      report "Successful assertion: ts_high";
       wait for 10 ns;
 	 end loop;
   end loop;
 WAIT;                                                        
-END PROCESS always;                                          
+END PROCESS always;                                         
 END counter_arch;
