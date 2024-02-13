@@ -27,11 +27,17 @@
 
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;  
-USE ieee.numeric_std.all;                              
+USE ieee.numeric_std.all;
 
-ENTITY counter_vhd_tst IS
-END counter_vhd_tst;
-ARCHITECTURE counter_arch OF counter_vhd_tst IS
+library vunit_lib;
+context vunit_lib.vunit_context;
+
+library design_lib;
+
+ENTITY tb_counter IS
+    generic (runner_cfg : string);
+END tb_counter;
+ARCHITECTURE counter_arch OF tb_counter IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL clk_i : STD_LOGIC;
@@ -39,17 +45,8 @@ SIGNAL rst_i : STD_LOGIC;
 SIGNAL ts_high_o : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ts_low_o : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL value_i : STD_LOGIC_VECTOR(31 DOWNTO 0);
-COMPONENT counter
-	PORT (
-	clk_i : IN STD_LOGIC;
-	rst_i : IN STD_LOGIC;
-	ts_high_o : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
-	ts_low_o : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
-	value_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
-	);
-END COMPONENT;
 BEGIN
-	i1 : counter
+	i1 : entity design_lib.counter
 	PORT MAP (
 -- list connections between master ports and signals
 	clk_i => clk_i,
@@ -90,7 +87,8 @@ always : PROCESS
 -- optional sensitivity list                                  
 -- (        )
 -- variable declarations                                      
-BEGIN                                                         
+BEGIN
+  test_runner_setup(runner, runner_cfg);
   for j in 0 to 1000 loop
     for i in 0 to 50000000 loop
       wait for 10 ns;
@@ -99,6 +97,7 @@ BEGIN
       wait for 10 ns;
 	 end loop;
   end loop;
-WAIT;                                                        
+  test_runner_cleanup(runner);
+  WAIT;                                                        
 END PROCESS always;                                         
 END counter_arch;

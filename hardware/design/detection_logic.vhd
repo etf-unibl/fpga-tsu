@@ -53,7 +53,7 @@ entity detection_logic is
     input_i      : in  std_logic;                     --! Input port for the waveform
     clk_i        : in  std_logic;                     --! Clock signal input
     ts_value_o   : out std_logic_vector(31 downto 0); --! Output forwarded to timestamp_value register
-    we_o         : out std_logic_vector(31 downto 0)  --! Write Enable Output that lowest bit is set on transition
+    we_o         : out std_logic                      --! Write Enable Output that lowest bit is set on transition
 );
 end detection_logic;
 
@@ -81,5 +81,5 @@ begin
 
   --! Output logic
   ts_value_o <= "0000000000000000000000000000000" & current_value;
-  we_o <= we_temp;
+  we_o <= we_temp(0);
 end arch;

@@ -29,9 +29,15 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
-ENTITY reg_map_vhd_tst IS
-END reg_map_vhd_tst;
-ARCHITECTURE reg_map_arch OF reg_map_vhd_tst IS
+library vunit_lib;
+context vunit_lib.vunit_context;
+
+library design_lib;
+
+ENTITY tb_reg_map IS
+    generic (runner_cfg : string);
+END tb_reg_map;
+ARCHITECTURE reg_map_arch OF tb_reg_map IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL clk_i : STD_LOGIC;
@@ -45,23 +51,8 @@ SIGNAL ts_low_i : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ts_low_o : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL value_i : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL value_o : STD_LOGIC_VECTOR(31 DOWNTO 0);
-COMPONENT reg_map
-	PORT (
-	clk_i : IN STD_LOGIC;
-	counter_value_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-	counter_value_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	en_i : IN STD_LOGIC;
-	rst_i : IN STD_LOGIC;
-	ts_high_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-	ts_high_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	ts_low_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-	ts_low_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	value_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-	value_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
-	);
-END COMPONENT;
 BEGIN
-	i1 : reg_map
+	i1 : entity design_lib.reg_map
 	PORT MAP (
 -- list connections between master ports and signals
 	clk_i => clk_i,
@@ -90,7 +81,8 @@ always : PROCESS
 -- optional sensitivity list                                  
 -- (        )                                                 
 -- variable declarations                                      
-BEGIN          
+BEGIN
+  test_runner_setup(runner, runner_cfg);
   ts_high_i <= (others => '0');  
   ts_low_i <= (others => '0'); 
   value_i <= (others => '0');
@@ -124,6 +116,7 @@ BEGIN
 	 assert (value_o = "00000000000000000000000000000000") report "Error value; Expected: 0; Actual: " & integer'image(to_integer(unsigned(value_o))) severity failure;
   end loop;
   report "Test successfully finished.";
-WAIT;                                                        
+  test_runner_cleanup(runner);
+  WAIT;                                                        
 END PROCESS always;                                               
 END reg_map_arch;
