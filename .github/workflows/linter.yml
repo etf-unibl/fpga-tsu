@@ -1,4 +1,4 @@
-# This is a workflow used for runing automated tests
+# This is a workflow used for checking the coding standard
 name: Style Check
 
 # Controls when the workflow will run
@@ -19,7 +19,7 @@ jobs:
     
     steps:
       - run: git config --global core.autocrlf false
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Check code style
         shell: pwsh

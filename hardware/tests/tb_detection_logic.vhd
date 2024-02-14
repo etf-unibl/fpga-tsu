@@ -2,29 +2,23 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+library vunit_lib;
+context vunit_lib.vunit_context;
 
-entity detection_logic_tb is
-end detection_logic_tb;
+library design_lib;
 
-architecture arch of detection_logic_tb is
+entity tb_detection_logic is
+  generic (runner_cfg : string);
+end tb_detection_logic;
 
-  component detection_logic
-    port(
-       clk_i : in std_logic;
-        input_i : in std_logic;
-        ts_value_o: out std_logic_vector(31 downto 0);
-        we_o : out std_logic
-      );
-    end component;
-    
+architecture arch of tb_detection_logic is
     signal clk_i :  std_logic;
     signal input_i : std_logic;
     signal ts_value_o: std_logic_vector(31 downto 0);
     signal we_o : std_logic;
-
 begin
   
-  dc : detection_logic port map(
+  dc : entity design_lib.detection_logic port map(
         clk_i => clk_i,
           input_i => input_i,
           ts_value_o => ts_value_o,
@@ -43,7 +37,7 @@ begin
     
     process 
     begin
-  
+
       input_i <= '0';
       wait for 60 ns;
     
@@ -70,14 +64,14 @@ begin
     
       input_i <= '0';
       wait for 20 ns;
-          
+
       wait;
 
     end process;
     
     process 
     begin
-        
+        test_runner_setup(runner, runner_cfg);
         wait for 5 ns;
         assert (we_o = '1') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
@@ -127,7 +121,7 @@ begin
         assert (we_o = '0') report "Error. Expected 1, Actual " & std_logic'image(we_o) severity error;
         
         report "Test completed";
-        
+        test_runner_cleanup(runner);
         wait;
         
     
