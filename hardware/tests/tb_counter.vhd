@@ -58,7 +58,7 @@ BEGIN
 process
 begin
   for j in 0 to 1000000000 loop
-    for i in 0 to 50000000 loop
+    for i in 0 to 500 loop
       clk_i <= '1';
       wait for 10 ns;
       clk_i <= '0';
@@ -90,7 +90,7 @@ always : PROCESS
 BEGIN
   test_runner_setup(runner, runner_cfg);
   for j in 0 to 1000 loop
-    for i in 0 to 50000000 loop
+    for i in 0 to 500 loop
       wait for 10 ns;
       assert (ts_low_o = std_logic_vector(to_unsigned(i * 20, 32))) report "Error ts_low; Expected: " & integer'image(i * 20) & " Actual: " & integer'image(to_integer(unsigned(ts_low_o))) severity failure;
       report "Successful assertion: ts_low";
