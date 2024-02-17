@@ -8,7 +8,7 @@
 --
 -- description:
 --
---   This file implements a register map of 3 32-bit registers.
+--   This file implements a register map of seven 32-bit registers.
 -----------------------------------------------------------------------------
 -- Copyright (c) 2024 Faculty of Electrical Engineering
 -----------------------------------------------------------------------------
@@ -35,70 +35,107 @@
 -- OTHER DEALINGS IN THE SOFTWARE
 -----------------------------------------------------------------------------
 
--------------------------------------------------------
---! @reg.vhd
---! @brief 32-bit register
--------------------------------------------------------
+-----------------------------------------------------------------------------
+--! @reg_map.vhd
+--! @brief Register map(file) containing seven 32-bit registers
+-----------------------------------------------------------------------------
 --! Use standard library
 library ieee;
 --! Use logic elements
 use ieee.std_logic_1164.all;
 
 --! Entity that describes the register map
---! There are 3 registers for the value of the input signal,
---! and for the 2 counters in the design
+--! There are seven register. sys_time register for storing Unix time, status
+--! for status information and interrupt sysbsystem, control for some control
+--! flags, and 4 register for storing information about transition of input
+--! signal, fall_ts_* when falling edge, and rise_ts_* when rising edge. Sufix h or l
+--! denotes if unix time or nanoseconds is store in register
 entity reg_map is
   port(
-  clk_i           : in  std_logic;                     --! Clock signal
-  rst_i           : in  std_logic;                     --! Asynchronous reset
-  en_i            : in  std_logic;                     --! Enable signal for writing to value, high and low register
-  value_i         : in  std_logic_vector(31 downto 0); --! Input for value register
-  ts_high_i       : in  std_logic_vector(31 downto 0); --! Input for Unix counter register
-  ts_low_i        : in  std_logic_vector(31 downto 0); --! Input for nanoseconds counter register
-  counter_value_i : in  std_logic_vector(31 downto 0); --! Input for value to be written to Unix counter
-  counter_value_o : out std_logic_vector(31 downto 0); --! Output for value to be written to Unix counter
-  value_o         : out std_logic_vector(31 downto 0); --! Output for value register
-  ts_high_o       : out std_logic_vector(31 downto 0); --! Output for Unix counter register
-  ts_low_o        : out std_logic_vector(31 downto 0)  --! Output for nanoseconds counter register
-);
+  clk_i           : in   std_logic;                     --! Clock signal
+  rst_i           : in   std_logic;                     --! Asynchronous reset
+
+  sys_time_i      : in   std_logic_vector(31 downto 0); --! Input for SYS_TIME r/w register
+  status_i        : in   std_logic_vector(31 downto 0); --! Input for STATUS r/w register
+  control_i       : in   std_logic_vector(31 downto 0); --! Input for CONTROL r/w register
+  fall_ts_h_i     : in   std_logic_vector(31 downto 0); --! Input for FALL_TS_H read only register
+  fall_ts_l_i     : in   std_logic_vector(31 downto 0); --! Input for FALL_TS_L read only register
+  rise_ts_h_i     : in   std_logic_vector(31 downto 0); --! Input for RISE_TS_H read only register
+  rise_ts_l_i     : in   std_logic_vector(31 downto 0); --! Input for RISE_TS_L read only register
+
+  sys_time_o      : out  std_logic_vector(31 downto 0); --! Output for SYS_TIME r/w register
+  status_o        : out  std_logic_vector(31 downto 0); --! Output for STATUS r/w register
+  control_o       : out  std_logic_vector(31 downto 0); --! Output for CONTROL r/w register
+  fall_ts_h_o     : out  std_logic_vector(31 downto 0); --! Output for FALL_TS_H read only register
+  fall_ts_l_o     : out  std_logic_vector(31 downto 0); --! Output for FALL_TS_L read only register
+  rise_ts_h_o     : out  std_logic_vector(31 downto 0); --! Output for RISE_TS_H read only register
+  rise_ts_l_o     : out  std_logic_vector(31 downto 0) --! Output for RISE_TS_L read only register
+
+  );
 end reg_map;
 
 --! @brief Architecture definition of the register map
 --! @details The output of the 3 registers get updated on every rising edge of the clock signal
 architecture arch of reg_map is
-  signal value_temp : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
-  signal ts_high_temp : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
-  signal ts_low_temp : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
+
   component reg is
     port(
-    clk_i  : in std_logic;
-    rst_i  : in std_logic;
-    data_i : in std_logic_vector(31 downto 0);
-    data_o : out std_logic_vector(31 downto 0)
+      clk_i  : in std_logic;
+      rst_i  : in std_logic;
+      data_i : in std_logic_vector(31 downto 0);
+      data_o : out std_logic_vector(31 downto 0)
     );
   end component;
+
 begin
-  process(clk_i, rst_i)
-  begin
-    if rst_i = '1' then
-      value_temp <= (others => '0');
-      ts_high_temp <= (others => '0');
-      ts_low_temp <= (others => '0');
-    elsif rising_edge(clk_i) then
-      if en_i = '1' then
-        value_temp <= value_i;
-        ts_high_temp <= ts_high_i;
-        ts_low_temp <= ts_low_i;
-      end if;
-    end if;
-  end process;
-  value_o <= value_temp;
-  ts_high_o <= ts_high_temp;
-  ts_low_o <= ts_low_temp;
+
   sys_time : reg port map(
-  clk_i  => clk_i,
-  rst_i  => rst_i,
-  data_i => counter_value_i,
-  data_o => counter_value_o
+    clk_i  => clk_i,
+    rst_i  => rst_i,
+    data_i => sys_time_i,
+    data_o => sys_time_o
   );
+
+  status : reg port map(
+    clk_i  => clk_i,
+    rst_i  => rst_i,
+    data_i => status_i,
+    data_o => status_o
+  );
+
+  control : reg port map(
+    clk_i  => clk_i,
+    rst_i  => rst_i,
+    data_i => control_i,
+    data_o => control_o
+  );
+
+  fall_ts_h : reg port map(
+    clk_i  => clk_i,
+    rst_i  => rst_i,
+    data_i => fall_ts_h_i,
+    data_o => fall_ts_h_o
+  );
+
+  fall_ts_l : reg port map(
+    clk_i  => clk_i,
+    rst_i  => rst_i,
+    data_i => fall_ts_l_i,
+    data_o => fall_ts_l_o
+  );
+
+  rise_ts_h : reg port map(
+    clk_i  => clk_i,
+    rst_i  => rst_i,
+    data_i => rise_ts_h_i,
+    data_o => rise_ts_h_o
+  );
+
+  rise_ts_l : reg port map(
+    clk_i  => clk_i,
+    rst_i  => rst_i,
+    data_i => rise_ts_l_i,
+    data_o => rise_ts_l_o
+  );
+
 end arch;
