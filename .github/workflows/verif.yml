@@ -24,7 +24,7 @@ jobs:
       - name: Run VUnit tests
         uses: VUnit/vunit_action@master
         with:
-          cmd: hardware/run.py
+          cmd: hardware/run.py --gtkwave-fmt vcd
 
       - name: Archive results
         if: always()
