@@ -1,30 +1,3 @@
--- Copyright (C) 2020  Intel Corporation. All rights reserved.
--- Your use of Intel Corporation's design tools, logic functions 
--- and other software and tools, and any partner logic 
--- functions, and any output files from any of the foregoing 
--- (including device programming or simulation files), and any 
--- associated documentation or information are expressly subject 
--- to the terms and conditions of the Intel Program License 
--- Subscription Agreement, the Intel Quartus Prime License Agreement,
--- the Intel FPGA IP License Agreement, or other applicable license
--- agreement, including, without limitation, that your use is for
--- the sole purpose of programming logic devices manufactured by
--- Intel and sold by Intel or its authorized distributors.  Please
--- refer to the applicable agreement for further details, at
--- https://fpgasoftware.intel.com/eula.
-
--- ***************************************************************************
--- This file contains a Vhdl test bench template that is freely editable to   
--- suit user's needs .Comments are provided in each section to help the user  
--- fill out necessary details.                                                
--- ***************************************************************************
--- Generated on "02/12/2024 10:08:49"
-                                                            
--- Vhdl Test Bench template for design  :  reg_map
--- 
--- Simulation tool : ModelSim-Altera (VHDL)
--- 
-
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
@@ -40,83 +13,175 @@ END tb_reg_map;
 ARCHITECTURE reg_map_arch OF tb_reg_map IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL clk_i : STD_LOGIC;
-SIGNAL counter_value_i : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL counter_value_o : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL en_i : STD_LOGIC;
-SIGNAL rst_i : STD_LOGIC;
-SIGNAL ts_high_i : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL ts_high_o : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL ts_low_i : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL ts_low_o : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL value_i : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL value_o : STD_LOGIC_VECTOR(31 DOWNTO 0);
+  signal clk_i   :  std_logic;
+  signal rst_i   :   std_logic;                    
+  
+  signal sys_time_i  : std_logic_vector(31 downto 0) := (others => '0'); 
+  signal status_i    :  std_logic_vector(31 downto 0):= (others => '0'); 
+  signal control_i   : std_logic_vector(31 downto 0):= (others => '0');
+  signal fall_ts_h_i : std_logic_vector(31 downto 0):= (others => '0');
+  signal fall_ts_l_i : std_logic_vector(31 downto 0):= (others => '0');
+  signal rise_ts_h_i : std_logic_vector(31 downto 0):= (others => '0');
+  signal rise_ts_l_i : std_logic_vector(31 downto 0):= (others => '0');
+  
+  signal sys_time_o  : std_logic_vector(31 downto 0):= (others => '0');
+  signal status_o    : std_logic_vector(31 downto 0):= (others => '0');
+  signal control_o   : std_logic_vector(31 downto 0):= (others => '0');
+  signal fall_ts_h_o : std_logic_vector(31 downto 0):= (others => '0');
+  signal fall_ts_l_o : std_logic_vector(31 downto 0):= (others => '0');
+  signal rise_ts_h_o : std_logic_vector(31 downto 0):= (others => '0');
+  signal rise_ts_l_o : std_logic_vector(31 downto 0):= (others => '0');
+  
 BEGIN
 	i1 : entity design_lib.reg_map
 	PORT MAP (
 -- list connections between master ports and signals
-	clk_i => clk_i,
-	counter_value_i => counter_value_i,
-	counter_value_o => counter_value_o,
-	en_i => en_i,
-	rst_i => rst_i,
-	ts_high_i => ts_high_i,
-	ts_high_o => ts_high_o,
-	ts_low_i => ts_low_i,
-	ts_low_o => ts_low_o,
-	value_i => value_i,
-	value_o => value_o
+		clk_i => clk_i,
+		rst_i => rst_i,
+		sys_time_i => sys_time_i,
+		status_i => status_i,
+		control_i => control_i,
+		fall_ts_h_i => fall_ts_h_i,
+		fall_ts_l_i => fall_ts_l_i,
+		rise_ts_h_i => rise_ts_h_i,
+		rise_ts_l_i => rise_ts_l_i,
+		sys_time_o => sys_time_o,
+		status_o => status_o,
+		control_o => control_o,
+		fall_ts_h_o => fall_ts_h_o,
+		fall_ts_l_o => fall_ts_l_o,
+		rise_ts_h_o => rise_ts_h_o,
+		rise_ts_l_o => rise_ts_l_o	
 	);
+	
+  -- stimulus generator for reset
+	rst_i <= '1', '0' after 30 ns;	
+
 process
 begin
-  for i in 0 to 1000001 loop
     clk_i <= '0';
     wait for 10 ns;
     clk_i <= '1';
     wait for 10 ns;
-  end loop;
-wait;
-end process;                                      
-always : PROCESS                                              
+end process;  
+                                    
+validation : PROCESS                                              
 -- optional sensitivity list                                  
 -- (        )                                                 
 -- variable declarations                                      
 BEGIN
   test_runner_setup(runner, runner_cfg);
-  ts_high_i <= (others => '0');  
-  ts_low_i <= (others => '0'); 
-  value_i <= (others => '0');
-  counter_value_i <= (others => '0');
-  en_i <= '1';
-  rst_i <= '0';
-  wait for 20 ns;               
-  for i in 0 to 1000000 loop
-    ts_high_i <= std_logic_vector(to_unsigned(i, 32));
-    ts_low_i <= std_logic_vector(to_unsigned(i, 32));
-    value_i <= std_logic_vector(to_unsigned(i, 32));
-    counter_value_i <= std_logic_vector(to_unsigned(i, 32));
-    wait for 20 ns;
-    assert (ts_high_o = std_logic_vector(to_unsigned(i, 32))) report "Error ts_high; Expected: " & integer'image(i) & " Actual: " & integer'image(to_integer(unsigned(ts_high_o))) severity failure;
-    assert (ts_low_o = std_logic_vector(to_unsigned(i, 32))) report "Error ts_low; Expected: " & integer'image(i) & " Actual: " & integer'image(to_integer(unsigned(ts_low_o))) severity failure;
-    assert (value_o = std_logic_vector(to_unsigned(i, 32))) report "Error value; Expected: " & integer'image(i) & " Actual: " & integer'image(to_integer(unsigned(value_o))) severity failure;
-    assert (counter_value_o = std_logic_vector(to_unsigned(i, 32))) report "Error counter_value; Expected: " & integer'image(i) & " Actual: " & integer'image(to_integer(unsigned(counter_value_o))) severity failure;
-  end loop;
-  wait for 20 ns;
-  rst_i <= '1';
-  wait for 20 ns;
-  rst_i <= '0';
-  en_i <= '0';
-  for j in 0 to 1000 loop
-    ts_high_i <= std_logic_vector(to_unsigned(j, 32));
-    ts_low_i <= std_logic_vector(to_unsigned(j, 32));
-    value_i <= std_logic_vector(to_unsigned(j, 32));
-    wait for 20 ns;
-	 assert (ts_high_o = "00000000000000000000000000000000") report "Error ts_high; Expected: 0; Actual: " & integer'image(to_integer(unsigned(ts_high_o))) severity failure;
-	 assert (ts_low_o = "00000000000000000000000000000000") report "Error ts_low; Expected: 0; Actual: " & integer'image(to_integer(unsigned(ts_low_o))) severity failure;
-	 assert (value_o = "00000000000000000000000000000000") report "Error value; Expected: 0; Actual: " & integer'image(to_integer(unsigned(value_o))) severity failure;
-  end loop;
-  report "Test successfully finished.";
+  
+   test_cases_loop : WHILE test_suite LOOP
+     
+      IF run("sys_time") THEN
+        info("--------------------------------------------------------------------------------");
+        info("TEST CASE: sys_time register check");
+        info("--------------------------------------------------------------------------------");
+		wait until rst_i <= '0';
+	    wait until rising_edge(clk_i);
+	    wait for 10 ns;  
+
+	    sys_time_i <= std_logic_vector(to_unsigned(2, 32));
+	    wait for 20 ns;
+	    assert(sys_time_i = sys_time_o) report "Error in sys_time register. Expected " & integer'image(to_integer(unsigned(sys_time_i))) 
+		   & " Actual " & integer'image(to_integer(unsigned(sys_time_o))) severity error; 
+        info("===== TEST CASE FINISHED =====");
+		
+	  elsif run("status") then
+	    info("--------------------------------------------------------------------------------");
+        info("TEST CASE: status register check");
+        info("--------------------------------------------------------------------------------");
+		wait until rst_i <= '0';
+		wait until rising_edge(clk_i);
+		wait for 10 ns;  
+
+    	status_i <= std_logic_vector(to_unsigned(3, 32));
+		wait for 20 ns;
+		assert(status_i = status_o) report "Error in sys_time register. Expected " & integer'image(to_integer(unsigned(status_i))) 
+			 & " Actual " & integer'image(to_integer(unsigned(status_o))) severity error; 
+		info("===== TEST CASE FINISHED =====");
+	  
+	  elsif run("control") then 
+	    info("--------------------------------------------------------------------------------");
+        info("TEST CASE: control register check");
+        info("--------------------------------------------------------------------------------");
+	    wait until rst_i <= '0';
+		wait until rising_edge(clk_i);
+	    wait for 10 ns;  
+
+	    control_i <= std_logic_vector(to_unsigned(4, 32));
+	    wait for 20 ns;
+	    assert(control_i = control_o) report "Error in sys_time register. Expected " & integer'image(to_integer(unsigned(control_i))) 
+		   & " Actual " & integer'image(to_integer(unsigned(control_o))) severity error; 		
+		info("===== TEST CASE FINISHED =====");
+		
+	  elsif run("fall_ts_h") then 
+	    info("--------------------------------------------------------------------------------");
+        info("TEST CASE: fall_ts_h register check");
+        info("--------------------------------------------------------------------------------");
+     	wait until rst_i <= '0';
+		wait until rising_edge(clk_i);
+	    wait for 10 ns;  
+
+    	fall_ts_h_i <= std_logic_vector(to_unsigned(5, 32));
+	    wait for 20 ns;
+	    assert(fall_ts_h_i = fall_ts_h_o) report "Error in sys_time register. Expected " 
+		   & integer'image(to_integer(unsigned(fall_ts_h_i))) 
+		   & " Actual " & integer'image(to_integer(unsigned(fall_ts_h_o))) severity error; 			
+		info("===== TEST CASE FINISHED =====");
+		
+	  elsif run("fall_ts_l") then 
+	    info("--------------------------------------------------------------------------------");
+        info("TEST CASE: fall_ts_l register check");
+        info("--------------------------------------------------------------------------------");
+	    wait until rst_i <= '0';
+		wait until rising_edge(clk_i);
+	    wait for 10 ns;  
+
+	    fall_ts_l_i <= std_logic_vector(to_unsigned(6, 32));
+	    wait for 20 ns;
+	    assert(fall_ts_l_i = fall_ts_l_o) report "Error in sys_time register. Expected " 
+		   & integer'image(to_integer(unsigned(fall_ts_l_i))) 
+		   & " Actual " & integer'image(to_integer(unsigned(fall_ts_l_o))) severity error;
+		
+		info("===== TEST CASE FINISHED =====");
+	  
+	  elsif run("rise_ts_h") then 
+	    info("--------------------------------------------------------------------------------");
+        info("TEST CASE: rise_ts_h register check");
+        info("--------------------------------------------------------------------------------");
+		wait until rst_i <= '0';
+		wait until rising_edge(clk_i);
+		wait for 10 ns;  
+
+		rise_ts_h_i <= std_logic_vector(to_unsigned(7, 32));
+		wait for 20 ns;
+		assert(rise_ts_h_i = rise_ts_h_o) report "Error in sys_time register. Expected " 
+			 & integer'image(to_integer(unsigned(rise_ts_h_i))) 
+			 & " Actual " & integer'image(to_integer(unsigned(rise_ts_h_o))) severity error;		
+		info("===== TEST CASE FINISHED =====");
+		
+	  elsif run("rise_ts_l") then 
+	    info("--------------------------------------------------------------------------------");
+        info("TEST CASE: rise_ts_l register check");
+        info("--------------------------------------------------------------------------------");
+	    wait until rst_i <= '0';
+		wait until rising_edge(clk_i);
+	    wait for 10 ns;  
+
+	    rise_ts_l_i <= std_logic_vector(to_unsigned(8, 32));
+	    wait for 20 ns;
+	    assert(rise_ts_l_i = rise_ts_l_o) report "Error in sys_time register. Expected " 
+		   & integer'image(to_integer(unsigned(rise_ts_l_i))) 
+		   & " Actual " & integer'image(to_integer(unsigned(rise_ts_l_o))) severity error; 		
+		info("===== TEST CASE FINISHED =====");
+	  
+	  end if;
+   end loop;
+  
+	info ("======  Complete test successfully finished =========");
   test_runner_cleanup(runner);
   WAIT;                                                        
-END PROCESS always;                                               
+END PROCESS validation;                                               
 END reg_map_arch;

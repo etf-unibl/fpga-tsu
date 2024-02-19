@@ -47,10 +47,10 @@ use ieee.std_logic_1164.all;
 --! Entity that describes a 32-bit register
 entity reg is
   port(
-  clk_i  : in  std_logic;                     --! clk_i - clock signal
-  rst_i  : in  std_logic;                     --! rst_i - reset signal
-  data_i : in  std_logic_vector(31 downto 0); --! data_i - input data
-  data_o : out std_logic_vector(31 downto 0)  --! data_o - output data
+    clk_i  : in  std_logic;                     --! clk_i - clock signal
+    rst_i  : in  std_logic;                     --! rst_i - reset signal
+    data_i : in  std_logic_vector(31 downto 0); --! data_i - input data
+    data_o : out std_logic_vector(31 downto 0)  --! data_o - output data
 );
 end reg;
 
