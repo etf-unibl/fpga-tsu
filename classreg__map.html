@@ -97,7 +97,7 @@ Entities</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="Libraries" name="Libraries"></a>
 Libraries</h2></td></tr>
  <tr class="memitem:a0a6af6eef40212dbaf130d57ce711256" id="r_a0a6af6eef40212dbaf130d57ce711256"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a0a6af6eef40212dbaf130d57ce711256">ieee</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
-<tr class="memdesc:a0a6af6eef40212dbaf130d57ce711256"><td class="mdescLeft">&#160;</td><td class="mdescRight">32-bit register  <a href="#a0a6af6eef40212dbaf130d57ce711256"></a><br /></td></tr>
+<tr class="memdesc:a0a6af6eef40212dbaf130d57ce711256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register map(file) containing seven 32-bit registers.  <a href="#a0a6af6eef40212dbaf130d57ce711256"></a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="Use_20Clauses" name="Use_20Clauses"></a>
 Use Clauses</h2></td></tr>
@@ -110,27 +110,37 @@ Ports</h2></td></tr>
 <tr class="memdesc:ae8d3e5458b0e3cd523d6461463e36fe8"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock signal.  <a href="#ae8d3e5458b0e3cd523d6461463e36fe8"></a><br /></td></tr>
 <tr class="memitem:ab86c7a8eec3a8327e506892977f85708" id="r_ab86c7a8eec3a8327e506892977f85708"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ab86c7a8eec3a8327e506892977f85708">rst_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
 <tr class="memdesc:ab86c7a8eec3a8327e506892977f85708"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous reset.  <a href="#ab86c7a8eec3a8327e506892977f85708"></a><br /></td></tr>
-<tr class="memitem:a9c8166486e79ac9bf81dd278becab976" id="r_a9c8166486e79ac9bf81dd278becab976"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a9c8166486e79ac9bf81dd278becab976">en_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memdesc:a9c8166486e79ac9bf81dd278becab976"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable signal for writing to value, high and low register.  <a href="#a9c8166486e79ac9bf81dd278becab976"></a><br /></td></tr>
-<tr class="memitem:a454bb341499055f90056684d7b879660" id="r_a454bb341499055f90056684d7b879660"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a454bb341499055f90056684d7b879660">value_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memdesc:a454bb341499055f90056684d7b879660"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for value register.  <a href="#a454bb341499055f90056684d7b879660"></a><br /></td></tr>
-<tr class="memitem:aeab7a33fd2329e2c428f14cd3fec50f5" id="r_aeab7a33fd2329e2c428f14cd3fec50f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aeab7a33fd2329e2c428f14cd3fec50f5">ts_high_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memdesc:aeab7a33fd2329e2c428f14cd3fec50f5"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for Unix counter register.  <a href="#aeab7a33fd2329e2c428f14cd3fec50f5"></a><br /></td></tr>
-<tr class="memitem:a1945e1bae0f4f71c9e5168bff1670d1f" id="r_a1945e1bae0f4f71c9e5168bff1670d1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1945e1bae0f4f71c9e5168bff1670d1f">ts_low_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memdesc:a1945e1bae0f4f71c9e5168bff1670d1f"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for nanoseconds counter register.  <a href="#a1945e1bae0f4f71c9e5168bff1670d1f"></a><br /></td></tr>
-<tr class="memitem:ada4a178cd00976528adb40b1f566927a" id="r_ada4a178cd00976528adb40b1f566927a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ada4a178cd00976528adb40b1f566927a">counter_value_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memdesc:ada4a178cd00976528adb40b1f566927a"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for value to be written to Unix counter.  <a href="#ada4a178cd00976528adb40b1f566927a"></a><br /></td></tr>
-<tr class="memitem:a2d4442c8f08cca273e01558d5e9b73a8" id="r_a2d4442c8f08cca273e01558d5e9b73a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a2d4442c8f08cca273e01558d5e9b73a8">counter_value_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memdesc:a2d4442c8f08cca273e01558d5e9b73a8"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for value to be written to Unix counter.  <a href="#a2d4442c8f08cca273e01558d5e9b73a8"></a><br /></td></tr>
-<tr class="memitem:a105b657ab89164f1d2bd015e64c1a313" id="r_a105b657ab89164f1d2bd015e64c1a313"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a105b657ab89164f1d2bd015e64c1a313">value_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memdesc:a105b657ab89164f1d2bd015e64c1a313"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for value register.  <a href="#a105b657ab89164f1d2bd015e64c1a313"></a><br /></td></tr>
-<tr class="memitem:a3a9711ba619c90942be9bdb488477bbc" id="r_a3a9711ba619c90942be9bdb488477bbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3a9711ba619c90942be9bdb488477bbc">ts_high_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memdesc:a3a9711ba619c90942be9bdb488477bbc"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for Unix counter register.  <a href="#a3a9711ba619c90942be9bdb488477bbc"></a><br /></td></tr>
-<tr class="memitem:af9e10c559a525ea1cc8a049304aeece6" id="r_af9e10c559a525ea1cc8a049304aeece6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#af9e10c559a525ea1cc8a049304aeece6">ts_low_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
-<tr class="memdesc:af9e10c559a525ea1cc8a049304aeece6"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for nanoseconds counter register.  <a href="#af9e10c559a525ea1cc8a049304aeece6"></a><br /></td></tr>
+<tr class="memitem:a04e1809149b3e1231b1db7f284634c1f" id="r_a04e1809149b3e1231b1db7f284634c1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a04e1809149b3e1231b1db7f284634c1f">sys_time_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:a04e1809149b3e1231b1db7f284634c1f"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for SYS_TIME r/w register.  <a href="#a04e1809149b3e1231b1db7f284634c1f"></a><br /></td></tr>
+<tr class="memitem:ab0c7fdc4effc9baad0c5901e032df4ff" id="r_ab0c7fdc4effc9baad0c5901e032df4ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ab0c7fdc4effc9baad0c5901e032df4ff">status_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:ab0c7fdc4effc9baad0c5901e032df4ff"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for STATUS r/w register.  <a href="#ab0c7fdc4effc9baad0c5901e032df4ff"></a><br /></td></tr>
+<tr class="memitem:a579af03fd9140611be64bed30c128692" id="r_a579af03fd9140611be64bed30c128692"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a579af03fd9140611be64bed30c128692">control_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:a579af03fd9140611be64bed30c128692"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for CONTROL r/w register.  <a href="#a579af03fd9140611be64bed30c128692"></a><br /></td></tr>
+<tr class="memitem:a4ab365584e4c2e29d1690f5beed659b7" id="r_a4ab365584e4c2e29d1690f5beed659b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4ab365584e4c2e29d1690f5beed659b7">fall_ts_h_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:a4ab365584e4c2e29d1690f5beed659b7"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for FALL_TS_H read only register.  <a href="#a4ab365584e4c2e29d1690f5beed659b7"></a><br /></td></tr>
+<tr class="memitem:aaddd63a6a85445c7dcda2916d33cb434" id="r_aaddd63a6a85445c7dcda2916d33cb434"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aaddd63a6a85445c7dcda2916d33cb434">fall_ts_l_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:aaddd63a6a85445c7dcda2916d33cb434"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for FALL_TS_L read only register.  <a href="#aaddd63a6a85445c7dcda2916d33cb434"></a><br /></td></tr>
+<tr class="memitem:a513356fda7601b807bfc01f35b64dfb9" id="r_a513356fda7601b807bfc01f35b64dfb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a513356fda7601b807bfc01f35b64dfb9">rise_ts_h_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:a513356fda7601b807bfc01f35b64dfb9"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for RISE_TS_H read only register.  <a href="#a513356fda7601b807bfc01f35b64dfb9"></a><br /></td></tr>
+<tr class="memitem:a887f92b5bd9e30ed7fbedd9700be4531" id="r_a887f92b5bd9e30ed7fbedd9700be4531"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a887f92b5bd9e30ed7fbedd9700be4531">rise_ts_l_i</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:a887f92b5bd9e30ed7fbedd9700be4531"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for RISE_TS_L read only register.  <a href="#a887f92b5bd9e30ed7fbedd9700be4531"></a><br /></td></tr>
+<tr class="memitem:a988c199d7398270c7563c580fd712db8" id="r_a988c199d7398270c7563c580fd712db8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a988c199d7398270c7563c580fd712db8">sys_time_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:a988c199d7398270c7563c580fd712db8"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for SYS_TIME r/w register.  <a href="#a988c199d7398270c7563c580fd712db8"></a><br /></td></tr>
+<tr class="memitem:ab1fb03e1e6ed51dce0f5c70f00046e61" id="r_ab1fb03e1e6ed51dce0f5c70f00046e61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ab1fb03e1e6ed51dce0f5c70f00046e61">status_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:ab1fb03e1e6ed51dce0f5c70f00046e61"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for STATUS r/w register.  <a href="#ab1fb03e1e6ed51dce0f5c70f00046e61"></a><br /></td></tr>
+<tr class="memitem:ac24a8cd892ca3708e1636084a3dbeb91" id="r_ac24a8cd892ca3708e1636084a3dbeb91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac24a8cd892ca3708e1636084a3dbeb91">control_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:ac24a8cd892ca3708e1636084a3dbeb91"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for CONTROL r/w register.  <a href="#ac24a8cd892ca3708e1636084a3dbeb91"></a><br /></td></tr>
+<tr class="memitem:ac321d62a1dd84393f3f9b1b869eaf799" id="r_ac321d62a1dd84393f3f9b1b869eaf799"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac321d62a1dd84393f3f9b1b869eaf799">fall_ts_h_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:ac321d62a1dd84393f3f9b1b869eaf799"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for FALL_TS_H read only register.  <a href="#ac321d62a1dd84393f3f9b1b869eaf799"></a><br /></td></tr>
+<tr class="memitem:a69f172084809def8073fa929e890c10f" id="r_a69f172084809def8073fa929e890c10f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a69f172084809def8073fa929e890c10f">fall_ts_l_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:a69f172084809def8073fa929e890c10f"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for FALL_TS_L read only register.  <a href="#a69f172084809def8073fa929e890c10f"></a><br /></td></tr>
+<tr class="memitem:af88737746ff88ed06adb67eef3967fc8" id="r_af88737746ff88ed06adb67eef3967fc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#af88737746ff88ed06adb67eef3967fc8">rise_ts_h_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:af88737746ff88ed06adb67eef3967fc8"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for RISE_TS_H read only register.  <a href="#af88737746ff88ed06adb67eef3967fc8"></a><br /></td></tr>
+<tr class="memitem:a87c0cbd3591b151910b15d7bd34ef6f4" id="r_a87c0cbd3591b151910b15d7bd34ef6f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a87c0cbd3591b151910b15d7bd34ef6f4">rise_ts_l_o</a> &#160;</td><td class="memItemLeft" align="right" valign="top"> <b><b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b></b>&#160;</td><td class="memItemRight" valign="bottom"> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memdesc:a87c0cbd3591b151910b15d7bd34ef6f4"><td class="mdescLeft">&#160;</td><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for RISE_TS_L read only register.  <a href="#a87c0cbd3591b151910b15d7bd34ef6f4"></a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Entity that describes the register map There are 3 registers for the value of the input signal, and for the 2 counters in the design </p>
+<div class="textblock"><p>Entity that describes the register map There are seven register. sys_time register for storing Unix time, status for status information and interrupt sysbsystem, control for some control flags, and 4 register for storing information about transition of input signal, fall_ts_* when falling edge, and rise_ts_* when rising edge. Sufix h or l denotes if unix time or nanoseconds is store in register </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="ae8d3e5458b0e3cd523d6461463e36fe8" name="ae8d3e5458b0e3cd523d6461463e36fe8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8d3e5458b0e3cd523d6461463e36fe8">&#9670;&#160;</a></span>clk_i</h2>
@@ -148,51 +158,99 @@ Ports</h2></td></tr>
 
 </div>
 </div>
-<a id="ada4a178cd00976528adb40b1f566927a" name="ada4a178cd00976528adb40b1f566927a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada4a178cd00976528adb40b1f566927a">&#9670;&#160;</a></span>counter_value_i</h2>
+<a id="a579af03fd9140611be64bed30c128692" name="a579af03fd9140611be64bed30c128692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a579af03fd9140611be64bed30c128692">&#9670;&#160;</a></span>control_i</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#ada4a178cd00976528adb40b1f566927a">counter_value_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="#a579af03fd9140611be64bed30c128692">control_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Input for value to be written to Unix counter. </p>
+<p>Input for CONTROL r/w register. </p>
 
 </div>
 </div>
-<a id="a2d4442c8f08cca273e01558d5e9b73a8" name="a2d4442c8f08cca273e01558d5e9b73a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d4442c8f08cca273e01558d5e9b73a8">&#9670;&#160;</a></span>counter_value_o</h2>
+<a id="ac24a8cd892ca3708e1636084a3dbeb91" name="ac24a8cd892ca3708e1636084a3dbeb91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24a8cd892ca3708e1636084a3dbeb91">&#9670;&#160;</a></span>control_o</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a2d4442c8f08cca273e01558d5e9b73a8">counter_value_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="#ac24a8cd892ca3708e1636084a3dbeb91">control_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Output for value to be written to Unix counter. </p>
+<p>Output for CONTROL r/w register. </p>
 
 </div>
 </div>
-<a id="a9c8166486e79ac9bf81dd278becab976" name="a9c8166486e79ac9bf81dd278becab976"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c8166486e79ac9bf81dd278becab976">&#9670;&#160;</a></span>en_i</h2>
+<a id="a4ab365584e4c2e29d1690f5beed659b7" name="a4ab365584e4c2e29d1690f5beed659b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ab365584e4c2e29d1690f5beed659b7">&#9670;&#160;</a></span>fall_ts_h_i</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a9c8166486e79ac9bf81dd278becab976">en_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="#a4ab365584e4c2e29d1690f5beed659b7">fall_ts_h_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enable signal for writing to value, high and low register. </p>
+<p>Input for FALL_TS_H read only register. </p>
+
+</div>
+</div>
+<a id="ac321d62a1dd84393f3f9b1b869eaf799" name="ac321d62a1dd84393f3f9b1b869eaf799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac321d62a1dd84393f3f9b1b869eaf799">&#9670;&#160;</a></span>fall_ts_h_o</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac321d62a1dd84393f3f9b1b869eaf799">fall_ts_h_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Output for FALL_TS_H read only register. </p>
+
+</div>
+</div>
+<a id="aaddd63a6a85445c7dcda2916d33cb434" name="aaddd63a6a85445c7dcda2916d33cb434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaddd63a6a85445c7dcda2916d33cb434">&#9670;&#160;</a></span>fall_ts_l_i</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aaddd63a6a85445c7dcda2916d33cb434">fall_ts_l_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Input for FALL_TS_L read only register. </p>
+
+</div>
+</div>
+<a id="a69f172084809def8073fa929e890c10f" name="a69f172084809def8073fa929e890c10f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69f172084809def8073fa929e890c10f">&#9670;&#160;</a></span>fall_ts_l_o</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a69f172084809def8073fa929e890c10f">fall_ts_l_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Output for FALL_TS_L read only register. </p>
 
 </div>
 </div>
@@ -208,8 +266,72 @@ Ports</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>32-bit register </p>
-<p>@reg.vhd </p>
+<p>Register map(file) containing seven 32-bit registers. </p>
+<p>@reg_map.vhd </p>
+
+</div>
+</div>
+<a id="a513356fda7601b807bfc01f35b64dfb9" name="a513356fda7601b807bfc01f35b64dfb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a513356fda7601b807bfc01f35b64dfb9">&#9670;&#160;</a></span>rise_ts_h_i</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a513356fda7601b807bfc01f35b64dfb9">rise_ts_h_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Input for RISE_TS_H read only register. </p>
+
+</div>
+</div>
+<a id="af88737746ff88ed06adb67eef3967fc8" name="af88737746ff88ed06adb67eef3967fc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af88737746ff88ed06adb67eef3967fc8">&#9670;&#160;</a></span>rise_ts_h_o</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#af88737746ff88ed06adb67eef3967fc8">rise_ts_h_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Output for RISE_TS_H read only register. </p>
+
+</div>
+</div>
+<a id="a887f92b5bd9e30ed7fbedd9700be4531" name="a887f92b5bd9e30ed7fbedd9700be4531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a887f92b5bd9e30ed7fbedd9700be4531">&#9670;&#160;</a></span>rise_ts_l_i</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a887f92b5bd9e30ed7fbedd9700be4531">rise_ts_l_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Input for RISE_TS_L read only register. </p>
+
+</div>
+</div>
+<a id="a87c0cbd3591b151910b15d7bd34ef6f4" name="a87c0cbd3591b151910b15d7bd34ef6f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87c0cbd3591b151910b15d7bd34ef6f4">&#9670;&#160;</a></span>rise_ts_l_o</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a87c0cbd3591b151910b15d7bd34ef6f4">rise_ts_l_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Output for RISE_TS_L read only register. </p>
 
 </div>
 </div>
@@ -229,6 +351,38 @@ Ports</h2></td></tr>
 
 </div>
 </div>
+<a id="ab0c7fdc4effc9baad0c5901e032df4ff" name="ab0c7fdc4effc9baad0c5901e032df4ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c7fdc4effc9baad0c5901e032df4ff">&#9670;&#160;</a></span>status_i</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ab0c7fdc4effc9baad0c5901e032df4ff">status_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Input for STATUS r/w register. </p>
+
+</div>
+</div>
+<a id="ab1fb03e1e6ed51dce0f5c70f00046e61" name="ab1fb03e1e6ed51dce0f5c70f00046e61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1fb03e1e6ed51dce0f5c70f00046e61">&#9670;&#160;</a></span>status_o</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ab1fb03e1e6ed51dce0f5c70f00046e61">status_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Output for STATUS r/w register. </p>
+
+</div>
+</div>
 <a id="acd03516902501cd1c7296a98e22c6fcb" name="acd03516902501cd1c7296a98e22c6fcb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd03516902501cd1c7296a98e22c6fcb">&#9670;&#160;</a></span>std_logic_1164</h2>
 
@@ -245,99 +399,35 @@ Ports</h2></td></tr>
 
 </div>
 </div>
-<a id="aeab7a33fd2329e2c428f14cd3fec50f5" name="aeab7a33fd2329e2c428f14cd3fec50f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeab7a33fd2329e2c428f14cd3fec50f5">&#9670;&#160;</a></span>ts_high_i</h2>
+<a id="a04e1809149b3e1231b1db7f284634c1f" name="a04e1809149b3e1231b1db7f284634c1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e1809149b3e1231b1db7f284634c1f">&#9670;&#160;</a></span>sys_time_i</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aeab7a33fd2329e2c428f14cd3fec50f5">ts_high_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="#a04e1809149b3e1231b1db7f284634c1f">sys_time_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Input for Unix counter register. </p>
+<p>Input for SYS_TIME r/w register. </p>
 
 </div>
 </div>
-<a id="a3a9711ba619c90942be9bdb488477bbc" name="a3a9711ba619c90942be9bdb488477bbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a9711ba619c90942be9bdb488477bbc">&#9670;&#160;</a></span>ts_high_o</h2>
+<a id="a988c199d7398270c7563c580fd712db8" name="a988c199d7398270c7563c580fd712db8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a988c199d7398270c7563c580fd712db8">&#9670;&#160;</a></span>sys_time_o</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a3a9711ba619c90942be9bdb488477bbc">ts_high_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
+          <td class="memname"><a class="el" href="#a988c199d7398270c7563c580fd712db8">sys_time_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Output for Unix counter register. </p>
-
-</div>
-</div>
-<a id="a1945e1bae0f4f71c9e5168bff1670d1f" name="a1945e1bae0f4f71c9e5168bff1670d1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1945e1bae0f4f71c9e5168bff1670d1f">&#9670;&#160;</a></span>ts_low_i</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a1945e1bae0f4f71c9e5168bff1670d1f">ts_low_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Input for nanoseconds counter register. </p>
-
-</div>
-</div>
-<a id="af9e10c559a525ea1cc8a049304aeece6" name="af9e10c559a525ea1cc8a049304aeece6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9e10c559a525ea1cc8a049304aeece6">&#9670;&#160;</a></span>ts_low_o</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#af9e10c559a525ea1cc8a049304aeece6">ts_low_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Output for nanoseconds counter register. </p>
-
-</div>
-</div>
-<a id="a454bb341499055f90056684d7b879660" name="a454bb341499055f90056684d7b879660"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a454bb341499055f90056684d7b879660">&#9670;&#160;</a></span>value_i</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a454bb341499055f90056684d7b879660">value_i</a> <b><span class="keywordflow">in</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Input for value register. </p>
-
-</div>
-</div>
-<a id="a105b657ab89164f1d2bd015e64c1a313" name="a105b657ab89164f1d2bd015e64c1a313"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a105b657ab89164f1d2bd015e64c1a313">&#9670;&#160;</a></span>value_o</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a105b657ab89164f1d2bd015e64c1a313">value_o</a> <b><span class="keywordflow">out</span><span class="vhdlchar"> </span></b> <b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b> </td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Output for value register. </p>
+<p>Output for SYS_TIME r/w register. </p>
 
 </div>
 </div>
