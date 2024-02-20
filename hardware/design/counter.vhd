@@ -87,7 +87,7 @@ begin
       end if;
       if prev_unix_value /= unix_start_value_i then
         ts_high_temp <= unsigned(unix_start_value_i);
-		ts_low_temp <= (others => '0');
+        ts_low_temp <= (others => '0');
       end if;
       prev_unix_value <= unix_start_value_i;
     end if;
