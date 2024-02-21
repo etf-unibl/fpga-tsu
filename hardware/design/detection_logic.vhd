@@ -133,4 +133,3 @@ begin
 
   unix_time_o <= ts_high_o; --! output unix time
 end arch;
-
