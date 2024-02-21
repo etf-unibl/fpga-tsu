@@ -56,15 +56,15 @@ use ieee.numeric_std.all;
 --! the Unix counter and output unix_time_o as output of the same counter.
 entity detection_logic is
   port(
-    data_i             : in  std_logic;                     --! Asynchronous data input
-    clk_i              : in  std_logic;                     --! Clock signal input
-    rst_i              : in  std_logic;                     --! Asynchronous reset input
-    unix_start_value_i : in  std_logic_vector(31 downto 0); --! Value to be written into the UNIX counter
-    unix_time_o        : out std_logic_vector(31 downto 0); --! Output for Unix counter
-    fall_ts_h          : out std_logic_vector(31 downto 0); --! Unix time falling edge of data_i is detected
-    fall_ts_l          : out std_logic_vector(31 downto 0); --! ns time falling edge of data_i is detected
-    rise_ts_h          : out std_logic_vector(31 downto 0); --! Unix time rising edge of data_i is detected
-    rise_ts_l          : out std_logic_vector(31 downto 0)  --! ns time rising edge of data_i is detected
+    data_i               : in  std_logic;                     --! Asynchronous data input
+    clk_i                : in  std_logic;                     --! Clock signal input
+    rst_i                : in  std_logic;                     --! Asynchronous reset input
+    unix_start_value_i   : in  std_logic_vector(31 downto 0); --! Value to be written into the UNIX counter
+    unix_time_o          : out std_logic_vector(31 downto 0); --! Output for Unix counter
+    fall_ts_h_o          : out std_logic_vector(31 downto 0); --! Unix time falling edge of data_i is detected
+    fall_ts_l_o          : out std_logic_vector(31 downto 0); --! ns time falling edge of data_i is detected
+    rise_ts_h_o          : out std_logic_vector(31 downto 0); --! Unix time rising edge of data_i is detected
+    rise_ts_l_o          : out std_logic_vector(31 downto 0)  --! ns time rising edge of data_i is detected
 );
 end detection_logic;
 
@@ -83,15 +83,15 @@ architecture arch of detection_logic is
   signal data_sync  : std_logic := '0'; --! output of the second shift-register
   signal old_value  : std_logic := '0'; --! value to be compared to detected new value
   signal ts_high_o  : std_logic_vector(31 downto 0);
-  signal ts_low_o   : std_logic_vector(31 downto 0); 
+  signal ts_low_o   : std_logic_vector(31 downto 0);
 
   component counter is
-  port(
-    rst_i              : in  std_logic;
-    clk_i              : in  std_logic;
-    unix_start_value_i : in std_logic_vector(31 downto 0);
-    ts_high_o          : out std_logic_vector(31 downto 0); 
-    ts_low_o           : out std_logic_vector(31 downto 0)  
+    port(
+      rst_i              : in  std_logic;
+      clk_i              : in  std_logic;
+      unix_start_value_i : in std_logic_vector(31 downto 0);
+      ts_high_o          : out std_logic_vector(31 downto 0);
+      ts_low_o           : out std_logic_vector(31 downto 0)
   );
   end component;
 
@@ -105,31 +105,31 @@ begin
   );
 
   -- Synchronizer for input data
-  process(clk_i)
+  synchronizer : process(clk_i)
   begin
     if rising_edge(clk_i) then
       data_async <= data_i;
       data_sync  <= data_async;
     end if;
-  end process;
+  end process synchronizer;
 
-  process(clk_i, rst_i)
+  detection : process(clk_i, rst_i)
   begin
     if rst_i = '1' then
       old_value <= '0';
     elsif rising_edge(clk_i) then
       if old_value /= data_sync then --! transition detected
         if data_sync = '0' then      --! \_ FALL
-          fall_ts_h <= ts_high_o;
-          fall_ts_l <= ts_low_o;
+          fall_ts_h_o <= ts_high_o;
+          fall_ts_l_o <= ts_low_o;
         else                         --! _| RISE
-          rise_ts_h <= ts_high_o;
-          rise_ts_l <= ts_low_o;
+          rise_ts_h_o <= ts_high_o;
+          rise_ts_l_o <= ts_low_o;
         end if;
         old_value <= data_sync;
       end if;
     end if;
-  end process;
+  end process detection;
 
   unix_time_o <= ts_high_o; --! output unix time
 end arch;
