@@ -33,10 +33,10 @@ begin
 	 rst_i => rst_i,
 	 unix_start_value_i => unix_start_value_i,
 	 unix_time_o   => unix_time_o,
-	 fall_ts_h => fall_ts_h,
-	 fall_ts_l => fall_ts_l,
-	 rise_ts_h => rise_ts_h,
-     rise_ts_l => rise_ts_l
+	 fall_ts_h_o => fall_ts_h,
+	 fall_ts_l_o => fall_ts_l,
+	 rise_ts_h_o => rise_ts_h,
+     rise_ts_l_o => rise_ts_l
 	);
         
     rst_i <= '1', '0' after 40 ns;    
