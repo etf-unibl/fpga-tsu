@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['increment_5fnanotime_0',['increment_nanotime',['../classcounter_1_1arch.html#a7d43fc83d22503586b5ff85253a554ca',1,'counter::arch']]]
+  ['detection_0',['detection',['../classdetection__logic_1_1arch.html#ac608ad761a9a752e6ada3bc71c3ed8dd',1,'detection_logic::arch']]]
 ];

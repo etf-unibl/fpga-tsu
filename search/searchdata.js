@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "acdfinprstu",
-  1: "acr",
-  2: "cr",
-  3: "ip",
-  4: "cdfinprstu"
+  0: "acdfinoprstu",
+  1: "acdr",
+  2: "cdr",
+  3: "dips",
+  4: "cdfinoprstu"
 };
 
 var indexSectionNames =
