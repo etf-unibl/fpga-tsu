@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['detection_5flogic_2evhd_0',['detection_logic.vhd',['../detection__logic_8vhd.html',1,'']]]
+  ['counter_2evhd_0',['counter.vhd',['../counter_8vhd.html',1,'']]]
 ];

@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['t_5findex_5ftype_0',['t_index_type',['../classfifo__buffer_1_1arch.html#a979ad1e7261a5b1be35ad01ba985f24f',1,'fifo_buffer::arch']]],
-  ['tail_1',['tail',['../classfifo__buffer_1_1arch.html#a66eae6cb9fc1662c8513bf4903844c24',1,'fifo_buffer::arch']]],
-  ['ts_5fhigh_5fo_2',['ts_high_o',['../classcounter.html#a3a9711ba619c90942be9bdb488477bbc',1,'counter.ts_high_o'],['../classdetection__logic_1_1arch.html#a31806e21687af42992ceef3a2343df29',1,'detection_logic.arch.ts_high_o']]],
-  ['ts_5fhigh_5ftemp_3',['ts_high_temp',['../classcounter_1_1arch.html#a0c093f60529926332b22f145b61662ea',1,'counter::arch']]],
-  ['ts_5flow_5fo_4',['ts_low_o',['../classcounter.html#af9e10c559a525ea1cc8a049304aeece6',1,'counter.ts_low_o'],['../classdetection__logic_1_1arch.html#a1fbd257413e905a3a41027f61b7949f9',1,'detection_logic.arch.ts_low_o']]],
-  ['ts_5flow_5ftemp_5',['ts_low_temp',['../classcounter_1_1arch.html#afa3e882ec82e9778a8ca73a69f8d8fcc',1,'counter::arch']]]
+  ['status_5fi_0',['status_i',['../classreg__map.html#ab0c7fdc4effc9baad0c5901e032df4ff',1,'reg_map']]],
+  ['status_5fo_1',['status_o',['../classreg__map.html#ab1fb03e1e6ed51dce0f5c70f00046e61',1,'reg_map']]],
+  ['status_5fread_2',['status_read',['../classavs__integrated__tsu_1_1arch.html#ae61dc533748c4ca63c967aeb8604753a',1,'avs_integrated_tsu::arch']]],
+  ['status_5fwrite_3',['status_write',['../classavs__integrated__tsu_1_1arch.html#a9dbcd0ba6fdb1c2cf84c6ca26130c635',1,'avs_integrated_tsu::arch']]],
+  ['std_5flogic_5f1164_4',['std_logic_1164',['../classavs__integrated__tsu.html#acd03516902501cd1c7296a98e22c6fcb',1,'avs_integrated_tsu.std_logic_1164'],['../classcounter.html#acd03516902501cd1c7296a98e22c6fcb',1,'counter.std_logic_1164'],['../classdetection__logic.html#acd03516902501cd1c7296a98e22c6fcb',1,'detection_logic.std_logic_1164'],['../classfifo__buffer.html#acd03516902501cd1c7296a98e22c6fcb',1,'fifo_buffer.std_logic_1164'],['../classreg.html#acd03516902501cd1c7296a98e22c6fcb',1,'reg.std_logic_1164'],['../classreg__map.html#acd03516902501cd1c7296a98e22c6fcb',1,'reg_map.std_logic_1164']]],
+  ['sys_5ftime_5fi_5',['sys_time_i',['../classreg__map.html#a04e1809149b3e1231b1db7f284634c1f',1,'reg_map']]],
+  ['sys_5ftime_5fo_6',['sys_time_o',['../classreg__map.html#a988c199d7398270c7563c580fd712db8',1,'reg_map']]],
+  ['sys_5ftime_5fread_7',['sys_time_read',['../classavs__integrated__tsu_1_1arch.html#a26316107ff972331efa4c22b0d0158a7',1,'avs_integrated_tsu::arch']]],
+  ['sys_5ftime_5fwrite_8',['sys_time_write',['../classavs__integrated__tsu_1_1arch.html#a0a99c5066318ba58a0272d9979e88528',1,'avs_integrated_tsu::arch']]]
 ];

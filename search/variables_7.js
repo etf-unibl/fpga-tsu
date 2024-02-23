@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numeric_5fstd_0',['numeric_std',['../classcounter.html#a2edc34402b573437d5f25fa90ba4013e',1,'counter.numeric_std'],['../classdetection__logic.html#a2edc34402b573437d5f25fa90ba4013e',1,'detection_logic.numeric_std'],['../classfifo__buffer.html#a2edc34402b573437d5f25fa90ba4013e',1,'fifo_buffer.numeric_std']]]
+  ['ieee_0',['ieee',['../classavs__integrated__tsu.html#a0a6af6eef40212dbaf130d57ce711256',1,'avs_integrated_tsu.ieee'],['../classcounter.html#a0a6af6eef40212dbaf130d57ce711256',1,'counter.ieee'],['../classdetection__logic.html#a0a6af6eef40212dbaf130d57ce711256',1,'detection_logic.ieee'],['../classfifo__buffer.html#a0a6af6eef40212dbaf130d57ce711256',1,'fifo_buffer.ieee'],['../classreg.html#a0a6af6eef40212dbaf130d57ce711256',1,'reg.ieee'],['../classreg__map.html#a0a6af6eef40212dbaf130d57ce711256',1,'reg_map.ieee']]]
 ];

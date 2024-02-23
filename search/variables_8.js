@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['old_5fvalue_0',['old_value',['../classdetection__logic_1_1arch.html#aeb8618f716b1b1292ddbc5de0c61c293',1,'detection_logic::arch']]]
+  ['numeric_5fstd_0',['numeric_std',['../classcounter.html#a2edc34402b573437d5f25fa90ba4013e',1,'counter.numeric_std'],['../classdetection__logic.html#a2edc34402b573437d5f25fa90ba4013e',1,'detection_logic.numeric_std'],['../classfifo__buffer.html#a2edc34402b573437d5f25fa90ba4013e',1,'fifo_buffer.numeric_std']]]
 ];
