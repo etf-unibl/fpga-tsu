@@ -45,12 +45,12 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity interrupt_logic is
-port(
-  interrupt1_i   : in  std_logic; --! Input for first interrupt signal
-  interrupt2_i   : in  std_logic; --! Input for second interrupt signal
-  interrupt_en_i : in  std_logic; --! Input for interrupt enable signal
-  interrupt_o    : out std_logic  --! Output for interrupt
-);
+  port(
+    interrupt1_i   : in  std_logic; --! Input for first interrupt signal
+    interrupt2_i   : in  std_logic; --! Input for second interrupt signal
+    interrupt_en_i : in  std_logic; --! Input for interrupt enable signal
+    interrupt_o    : out std_logic  --! Output for interrupt
+  );
 end interrupt_logic;
 
 --! @brief Architecture of interrupt logic
