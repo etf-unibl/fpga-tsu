@@ -43,7 +43,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity output_buffer_logic is
-port(
+  port(
   clk_i   : in  std_logic; --! Clock input
   rst_i   : in  std_logic; --! Asnychronous reset input
   en_i    : in  std_logic; --! Enable input
@@ -59,8 +59,8 @@ end output_buffer_logic;
 --! Every subsequent reading will pop the next element from the fifo buffer
 --! There is an asynchronous reset, and also the logic is reset when the fifo buffer gets empty
 architecture arch of output_buffer_logic is
-signal first_write_temp : std_logic := '0';
-signal rden_o_temp : std_logic := '0';
+  signal first_write_temp : std_logic := '0';
+  signal rden_o_temp : std_logic := '0';
 begin
   process(clk_i, rst_i)
   begin
@@ -72,16 +72,16 @@ begin
         first_write_temp <= '0';
         rden_o_temp <= '0';
       else
-		   if first_write_temp = '0' and en_i = '1' then
-			  first_write_temp <= '1';
-			  rden_o_temp <= '1';
-		   elsif first_write_temp = '1' and read_i = '1' then
-			  rden_o_temp <= '1';
-		   else
-			  rden_o_temp <= '0';
-		   end if;
-       end if;
-     end if;
+        if first_write_temp = '0' and en_i = '1' then
+          first_write_temp <= '1';
+          rden_o_temp <= '1';
+        elsif first_write_temp = '1' and read_i = '1' then
+          rden_o_temp <= '1';
+        else
+          rden_o_temp <= '0';
+        end if;
+      end if;
+    end if;
   end process;
   rden_o <= rden_o_temp;
 end architecture;
