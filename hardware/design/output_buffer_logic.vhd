@@ -62,6 +62,7 @@ architecture arch of output_buffer_logic is
   signal first_write_temp : std_logic := '0';
   signal rden_o_temp : std_logic := '0';
 begin
+  --! Output buffer logic synchronous process
   process(clk_i, rst_i)
   begin
     if rst_i = '1' then
@@ -84,4 +85,4 @@ begin
     end if;
   end process;
   rden_o <= rden_o_temp;
-end architecture;
+end arch;
