@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['reg_0',['reg',['../classreg.html',1,'']]],
-  ['reg_5fmap_1',['reg_map',['../classreg__map.html',1,'']]]
+  ['output_5fbuffer_5flogic_0',['output_buffer_logic',['../classoutput__buffer__logic.html',1,'']]]
 ];

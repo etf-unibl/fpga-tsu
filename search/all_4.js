@@ -12,6 +12,7 @@ var searchData=
   ['fifo_5fbuffer_2evhd_9',['fifo_buffer.vhd',['../fifo__buffer_8vhd.html',1,'']]],
   ['fill_5fcount_5fo_10',['fill_count_o',['../classfifo__buffer.html#aa7d87e64c9c11d877b2c904098a8e3c2',1,'fifo_buffer']]],
   ['fill_5fcount_5ftemp_11',['fill_count_temp',['../classfifo__buffer_1_1arch.html#ad18488a5fd03471c715416bc0f995553',1,'fifo_buffer::arch']]],
-  ['full_5fo_12',['full_o',['../classfifo__buffer.html#a69a1cf4fd9595722f9c4c41bdd5151ca',1,'fifo_buffer']]],
-  ['full_5ftemp_13',['full_temp',['../classfifo__buffer_1_1arch.html#a08113203dc1a293318fbdcf277fb7609',1,'fifo_buffer::arch']]]
+  ['first_5fwrite_5ftemp_12',['first_write_temp',['../classoutput__buffer__logic_1_1arch.html#a991deb84c48e190eb3d65e3df9018e68',1,'output_buffer_logic::arch']]],
+  ['full_5fo_13',['full_o',['../classfifo__buffer.html#a69a1cf4fd9595722f9c4c41bdd5151ca',1,'fifo_buffer']]],
+  ['full_5ftemp_14',['full_temp',['../classfifo__buffer_1_1arch.html#a08113203dc1a293318fbdcf277fb7609',1,'fifo_buffer::arch']]]
 ];
