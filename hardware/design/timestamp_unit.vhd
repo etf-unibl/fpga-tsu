@@ -496,7 +496,7 @@ begin
           response_temp <= "10";
         end if;
       elsif read_i = '1' or write_i = '1' then
-          response_temp <= "11";
+        response_temp <= "11";
       end if;
         --! Writing into status register
       if address_i /= "0001" then
