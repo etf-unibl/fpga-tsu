@@ -287,44 +287,44 @@ begin
     rise_ts_l_o        => rise_ts_l_write
   );
    --! Instantiation of FIFO buffer for fall ts high register
-   fall_ts_h_fifo : fifo_buffer port map(
-     clk_i        => clk_i,
-     rst_i        => reset_temp,
-     data_i       => fall_ts_h_read,
-     wren_i       => en_fall_write_temp,
-     rden_i       => fall_ts_h_read_en,
-     data_o       => fifo_fall_ts_h_read,
-     rdvalid_o    => valid_fall_high_o,
-     empty_o      => empty_fall_high_o,
-     full_o       => full_fall_high_o,
-     fill_count_o => fill_count_fall_h
-   );
+  fall_ts_h_fifo : fifo_buffer port map(
+    clk_i        => clk_i,
+    rst_i        => reset_temp,
+    data_i       => fall_ts_h_read,
+    wren_i       => en_fall_write_temp,
+    rden_i       => fall_ts_h_read_en,
+    data_o       => fifo_fall_ts_h_read,
+    rdvalid_o    => valid_fall_high_o,
+    empty_o      => empty_fall_high_o,
+    full_o       => full_fall_high_o,
+    fill_count_o => fill_count_fall_h
+  );
    --! Instantiation of FIFO buffer for fall ts low register
-   fall_ts_l_fifo : fifo_buffer port map(
-     clk_i        => clk_i,
-     rst_i        => reset_temp,
-     data_i       => fall_ts_l_read,
-     wren_i       => en_fall_write_temp,
-     rden_i       => fall_ts_l_read_en,
-     data_o       => fifo_fall_ts_l_read,
-     rdvalid_o    => valid_fall_low_o,
-     empty_o      => empty_fall_low_o,
-     full_o       => full_fall_low_o,
-     fill_count_o => fill_count_fall_l
-   );
+  fall_ts_l_fifo : fifo_buffer port map(
+    clk_i        => clk_i,
+    rst_i        => reset_temp,
+    data_i       => fall_ts_l_read,
+    wren_i       => en_fall_write_temp,
+    rden_i       => fall_ts_l_read_en,
+    data_o       => fifo_fall_ts_l_read,
+    rdvalid_o    => valid_fall_low_o,
+    empty_o      => empty_fall_low_o,
+    full_o       => full_fall_low_o,
+    fill_count_o => fill_count_fall_l
+  );
    --! Instantiation of FIFO buffer for rise ts high register
-   rise_ts_h_fifo : fifo_buffer port map(
-     clk_i        => clk_i,
-     rst_i        => reset_temp,
-     data_i       => rise_ts_h_read,
-     wren_i       => en_rise_write_temp,
-     rden_i       => rise_ts_h_read_en,
-     data_o       => fifo_rise_ts_h_read,
-     rdvalid_o    => valid_rise_high_o,
-     empty_o      => empty_rise_high_o,
-     full_o       => full_rise_high_o,
-     fill_count_o => fill_count_rise_h
-   );
+  rise_ts_h_fifo : fifo_buffer port map(
+    clk_i        => clk_i,
+    rst_i        => reset_temp,
+    data_i       => rise_ts_h_read,
+    wren_i       => en_rise_write_temp,
+    rden_i       => rise_ts_h_read_en,
+    data_o       => fifo_rise_ts_h_read,
+    rdvalid_o    => valid_rise_high_o,
+    empty_o      => empty_rise_high_o,
+    full_o       => full_rise_high_o,
+    fill_count_o => fill_count_rise_h
+  );
   --! Instantiation of FIFO buffer for rise ts low register
   rise_ts_l_fifo : fifo_buffer port map(
     clk_i        => clk_i,
@@ -406,60 +406,60 @@ begin
       fall_ts_h_read_en <= '0';
       fall_ts_l_read_en <= '0';
       rise_ts_h_read_en <= '0';
-        rise_ts_l_read_en <= '0';
-        response_temp <= "00";
-     elsif rising_edge(clk_i) then
-       fall_ts_h_read_en <= '0';
-       fall_ts_l_read_en <= '0';
-       rise_ts_h_read_en <= '0';
-       rise_ts_l_read_en <= '0';
-       response_temp <= "00";
-       --! sys_time register
-       if address_i = "0000" then
-         if write_i = '1' then
-           sys_time_write <= writedata_i;
-         elsif read_i = '1' then
-           readdata_o <= unix_time_read;
-         end if;
-        --! status register
-       elsif address_i = "0001" then
-         if write_i = '1' then
-           status_write <= writedata_i;
-         elsif read_i = '1' then
-           readdata_o <= status_read;
-         end if;
-       --! control register
-       elsif address_i = "0010" then
-         if write_i = '1' then
-           control_write <= writedata_i;
-         elsif read_i = '1' then
-           readdata_o <= control_read;
-         end if;
-        --! fall_ts_h register
-         elsif address_i = "0011" then
-           if read_i = '1' then
-           readdata_o <= fall_ts_h_read;
-         elsif write_i = '1' then
-           response_temp <= "10";
-         end if;
-        --! fall_ts_l register
-        elsif address_i = "0100" then
-          if read_i = '1' then
-            readdata_o <= fall_ts_l_read;
+      rise_ts_l_read_en <= '0';
+      response_temp <= "00";
+    elsif rising_edge(clk_i) then
+      fall_ts_h_read_en <= '0';
+      fall_ts_l_read_en <= '0';
+      rise_ts_h_read_en <= '0';
+      rise_ts_l_read_en <= '0';
+      response_temp <= "00";
+      --! sys_time register
+      if address_i = "0000" then
+        if write_i = '1' then
+          sys_time_write <= writedata_i;
+        elsif read_i = '1' then
+          readdata_o <= unix_time_read;
+        end if;
+      --! status register
+      elsif address_i = "0001" then
+        if write_i = '1' then
+          status_write <= writedata_i;
+        elsif read_i = '1' then
+          readdata_o <= status_read;
+        end if;
+     --! control register
+      elsif address_i = "0010" then
+        if write_i = '1' then
+          control_write <= writedata_i;
+        elsif read_i = '1' then
+          readdata_o <= control_read;
+        end if;
+      --! fall_ts_h register
+      elsif address_i = "0011" then
+        if read_i = '1' then
+          readdata_o <= fall_ts_h_read;
         elsif write_i = '1' then
           response_temp <= "10";
         end if;
-        --! rise_ts_h register
-        elsif address_i = "0101" then
-          if read_i = '1' then
-            readdata_o <= rise_ts_h_read;
+      --! fall_ts_l register
+      elsif address_i = "0100" then
+        if read_i = '1' then
+          readdata_o <= fall_ts_l_read;
         elsif write_i = '1' then
           response_temp <= "10";
         end if;
-        --! rise_ts_l register
-        elsif address_i = "0110" then
-          if read_i = '1' then
-            readdata_o <= rise_ts_l_read;
+      --! rise_ts_h register
+      elsif address_i = "0101" then
+        if read_i = '1' then
+          readdata_o <= rise_ts_h_read;
+        elsif write_i = '1' then
+          response_temp <= "10";
+        end if;
+      --! rise_ts_l register
+      elsif address_i = "0110" then
+        if read_i = '1' then
+          readdata_o <= rise_ts_l_read;
         elsif  write_i = '1' then
           response_temp <= "10";
         end if;
@@ -486,7 +486,7 @@ begin
           readdata_o <= fifo_rise_ts_h_read;
         elsif write_i = '1' then
           response_temp <= "10";
-          end if;
+        end if;
       --! rise_ts_l fifo buffer
       elsif address_i = "1011" then
         if read_i = '1' then
@@ -496,9 +496,9 @@ begin
           response_temp <= "10";
         end if;
       elsif read_i = '1' or write_i = '1' then
-        response_temp <= "11";
+          response_temp <= "11";
       end if;
-      --! Writing into status register
+        --! Writing into status register
       if address_i /= "0001" then
         status_write <= status_internal;
       end if;
