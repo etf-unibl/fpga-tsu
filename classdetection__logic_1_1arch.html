@@ -91,8 +91,9 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="Processes" name="Processes"></a>
 Processes</h2></td></tr>
  <tr class="memitem:a10517236672f645b79efba9a83d0bc00" id="r_a10517236672f645b79efba9a83d0bc00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a10517236672f645b79efba9a83d0bc00">synchronizer</a>&#160;</td><td class="memItemRight" valign="bottom"><b> ( <b><b><a class="el" href="classdetection__logic.html#ae8d3e5458b0e3cd523d6461463e36fe8">clk_i</a></b> <span class="vhdlchar"> </span></b> )</b></td></tr>
+<tr class="memdesc:a10517236672f645b79efba9a83d0bc00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronizer for input data.  <a href="#a10517236672f645b79efba9a83d0bc00"></a><br /></td></tr>
 <tr class="memitem:ac608ad761a9a752e6ada3bc71c3ed8dd" id="r_ac608ad761a9a752e6ada3bc71c3ed8dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac608ad761a9a752e6ada3bc71c3ed8dd">detection</a>&#160;</td><td class="memItemRight" valign="bottom"><b> ( <b><b><a class="el" href="classdetection__logic.html#ae8d3e5458b0e3cd523d6461463e36fe8">clk_i</a></b> <span class="vhdlchar"> </span></b> , <b><b><a class="el" href="classdetection__logic.html#ab86c7a8eec3a8327e506892977f85708">rst_i</a></b> <span class="vhdlchar"> </span></b> )</b></td></tr>
-<tr class="memdesc:ac608ad761a9a752e6ada3bc71c3ed8dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">transition detected  <a href="#ac608ad761a9a752e6ada3bc71c3ed8dd"></a><br /></td></tr>
+<tr class="memdesc:ac608ad761a9a752e6ada3bc71c3ed8dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detection of transition.  <a href="#ac608ad761a9a752e6ada3bc71c3ed8dd"></a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="Components" name="Components"></a>
 Components</h2></td></tr>
@@ -108,15 +109,17 @@ Signals</h2></td></tr>
 <tr class="memdesc:aeb8618f716b1b1292ddbc5de0c61c293"><td class="mdescLeft">&#160;</td><td class="mdescRight">value to be compared to detected new value  <a href="#aeb8618f716b1b1292ddbc5de0c61c293"></a><br /></td></tr>
 <tr class="memitem:a31806e21687af42992ceef3a2343df29" id="r_a31806e21687af42992ceef3a2343df29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a31806e21687af42992ceef3a2343df29">ts_high_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
 <tr class="memitem:a1fbd257413e905a3a41027f61b7949f9" id="r_a1fbd257413e905a3a41027f61b7949f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1fbd257413e905a3a41027f61b7949f9">ts_low_o</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="keywordtype">std_logic_vector</span><span class="vhdlchar"> </span><span class="vhdlchar">(</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">31</span> <span class="vhdlchar"> </span><span class="keywordflow">downto</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">)</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:aff6eae7636e080ff013a8c9ec7f46965" id="r_aff6eae7636e080ff013a8c9ec7f46965"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aff6eae7636e080ff013a8c9ec7f46965">en_fall_temp</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="keywordtype">std_logic</span><span class="vhdlchar"> </span><span class="vhdlchar">:</span><span class="vhdlchar">=</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span><span class="vhdlchar">&#39;</span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">&#39;</span><span class="vhdlchar"> </span></b></td></tr>
+<tr class="memitem:a194a936760d1708b1b2476542cc6fb53" id="r_a194a936760d1708b1b2476542cc6fb53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a194a936760d1708b1b2476542cc6fb53">en_rise_temp</a> &#160;</td><td class="memItemRight" valign="bottom"><b><span class="keywordtype">std_logic</span><span class="vhdlchar"> </span><span class="vhdlchar">:</span><span class="vhdlchar">=</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span><span class="vhdlchar">&#39;</span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">&#39;</span><span class="vhdlchar"> </span></b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="Instantiations" name="Instantiations"></a>
 Instantiations</h2></td></tr>
  <tr class="memitem:a4cf4dea70671190e0bc5829660eecf4f" id="r_a4cf4dea70671190e0bc5829660eecf4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4cf4dea70671190e0bc5829660eecf4f">inner_counter</a>&#160;</td><td class="memItemRight" valign="bottom">  <b>counter</b>  <em><a class="el" href="classcounter.html">&lt;Entity counter&gt;</a></em></td></tr>
-<tr class="memdesc:a4cf4dea70671190e0bc5829660eecf4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">counter instantiation  <a href="#a4cf4dea70671190e0bc5829660eecf4f"></a><br /></td></tr>
+<tr class="memdesc:a4cf4dea70671190e0bc5829660eecf4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter port mapping.  <a href="#a4cf4dea70671190e0bc5829660eecf4f"></a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Architecture definition of the <a class="el" href="classdetection__logic.html">detection_logic</a>. </p>
-<p>Transitions of the input signal data_i are being listen to. Because the data_i signal can change within a flip-flop's setup and hold times the output may be unusable for various reasons. The flip-flop may or may not have propagated the new value, or perhaps got confused for a while and not settled to any real output value ("metastability"). So we do synchronization with two-stage shift-register that are clocked by the target domain's clock. In this way we get a synchronous version of that asynchronous input signal. Each time transition of data_i is detected, depending if it was rising or faling edge, the pair of rising/falling outputs are being updated. ?_ts_h refers to the Unix time moment and ?_ts_l to the nanosec moment of transition. </p>
+<p>Transitions of the input signal data_i are being listen to. Because the data_i signal can change within a flip-flop's setup and hold times the output may be unusable for various reasons. The flip-flop may or may not have propagated the new value, or perhaps got confused for a while and not settled to any real output value ("metastability"). So we do synchronization with two-stage shift-register that are clocked by the target domain's clock. In this way we get a synchronous version of that asynchronous input signal. Each time transition of data_i is detected, depending if it was rising or faling edge, the pair of rising/falling outputs are being updated. *_ts_h refers to the Unix time moment and *_ts_l to the nanosec moment of transition. </p>
 </div><h2 class="groupheader">Member Function/Procedure/Process Documentation</h2>
 <a id="ac608ad761a9a752e6ada3bc71c3ed8dd" name="ac608ad761a9a752e6ada3bc71c3ed8dd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac608ad761a9a752e6ada3bc71c3ed8dd">&#9670;&#160;</a></span>detection()</h2>
@@ -137,7 +140,7 @@ Instantiations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>transition detected </p>
+<p>Detection of transition. </p>
 
 </div>
 </div>
@@ -155,6 +158,8 @@ Instantiations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Synchronizer for input data. </p>
 
 </div>
 </div>
@@ -205,6 +210,34 @@ Instantiations</h2></td></tr>
 
 </div>
 </div>
+<a id="aff6eae7636e080ff013a8c9ec7f46965" name="aff6eae7636e080ff013a8c9ec7f46965"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff6eae7636e080ff013a8c9ec7f46965">&#9670;&#160;</a></span>en_fall_temp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aff6eae7636e080ff013a8c9ec7f46965">en_fall_temp</a> <b><span class="keywordtype">std_logic</span><span class="vhdlchar"> </span><span class="vhdlchar">:</span><span class="vhdlchar">=</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span><span class="vhdlchar">&#39;</span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">&#39;</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a194a936760d1708b1b2476542cc6fb53" name="a194a936760d1708b1b2476542cc6fb53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a194a936760d1708b1b2476542cc6fb53">&#9670;&#160;</a></span>en_rise_temp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a194a936760d1708b1b2476542cc6fb53">en_rise_temp</a> <b><span class="keywordtype">std_logic</span><span class="vhdlchar"> </span><span class="vhdlchar">:</span><span class="vhdlchar">=</span><span class="vhdlchar"> </span><span class="vhdlchar"> </span><span class="vhdlchar">&#39;</span><span class="vhdlchar"> </span> <span class="vhdldigit">0</span> <span class="vhdlchar"> </span><span class="vhdlchar">&#39;</span><span class="vhdlchar"> </span></b> </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a4cf4dea70671190e0bc5829660eecf4f" name="a4cf4dea70671190e0bc5829660eecf4f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4cf4dea70671190e0bc5829660eecf4f">&#9670;&#160;</a></span>inner_counter</h2>
 
@@ -217,7 +250,7 @@ Instantiations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>counter instantiation </p>
+<p>Counter port mapping. </p>
 
 </div>
 </div>
