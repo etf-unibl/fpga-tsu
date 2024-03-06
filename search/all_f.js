@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['wren_5fi_0',['wren_i',['../classfifo__buffer.html#aa7644e3ba861acc15c3d483cc251cf6d',1,'fifo_buffer']]],
-  ['write_5fi_1',['write_i',['../classavs__integrated__tsu.html#a09effd3ab7becf6cbe1312a14192b4f9',1,'avs_integrated_tsu']]],
-  ['writedata_5fi_2',['writedata_i',['../classavs__integrated__tsu.html#ae433021e495dc0309a18ac07b07c4ed9',1,'avs_integrated_tsu']]]
+  ['valid_5ffall_5fhigh_5fo_0',['valid_fall_high_o',['../classtimestamp__unit_1_1arch.html#a7a5e940adb6b6f68a8bd19b101b59d6a',1,'timestamp_unit::arch']]],
+  ['valid_5ffall_5flow_5fo_1',['valid_fall_low_o',['../classtimestamp__unit_1_1arch.html#ab71ad954fbd72143d2917ac5af0cddf9',1,'timestamp_unit::arch']]],
+  ['valid_5frise_5fhigh_5fo_2',['valid_rise_high_o',['../classtimestamp__unit_1_1arch.html#a1fbe79e6111caea7a257760f52b9dcf7',1,'timestamp_unit::arch']]],
+  ['valid_5frise_5flow_5fo_3',['valid_rise_low_o',['../classtimestamp__unit_1_1arch.html#ab06455a0189d19d4b691c5def9e80e34',1,'timestamp_unit::arch']]]
 ];
