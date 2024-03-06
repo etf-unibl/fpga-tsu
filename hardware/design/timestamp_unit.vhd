@@ -331,7 +331,7 @@ begin
     rst_i        => reset_temp,
     data_i       => rise_ts_l_read,
     wren_i       => en_rise_write_temp,
-    rden_i       => rise_ts_l_temp,
+    rden_i       => rise_ts_l_read_en,
     data_o       => fifo_rise_ts_l_read,
     rdvalid_o    => valid_rise_low_o,
     empty_o      => empty_rise_low_o,
