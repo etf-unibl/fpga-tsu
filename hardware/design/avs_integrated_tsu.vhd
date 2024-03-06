@@ -97,8 +97,11 @@ architecture arch of avs_integrated_tsu is
       data_i             : in  std_logic;
       clk_i              : in  std_logic;
       rst_i              : in  std_logic;
+      start_i            : in  std_logic;
       unix_start_value_i : in  std_logic_vector(31 downto 0);
       unix_time_o        : out std_logic_vector(31 downto 0);
+      en_fall_o          : out std_logic;
+      en_rise_o          : out std_logic;
       fall_ts_h_o        : out std_logic_vector(31 downto 0);
       fall_ts_l_o        : out std_logic_vector(31 downto 0);
       rise_ts_h_o        : out std_logic_vector(31 downto 0);
@@ -133,6 +136,11 @@ architecture arch of avs_integrated_tsu is
   -- Signal used to read current unix time from counter inside detection_logic
   signal unix_time_read : std_logic_vector(31 downto 0) := (others => '0');
 
+  --
+  signal start_i   : std_logic := '1';
+  signal en_fall_o : std_logic;
+  signal en_rise_o : std_logic;
+
 
 begin
 
@@ -163,8 +171,11 @@ begin
     data_i             => data_i,
     clk_i              => clk_i,
     rst_i              => rst_i,
+    start_i            => start_i,
     unix_start_value_i => sys_time_read,
     unix_time_o        => unix_time_read,
+    en_fall_o          => en_fall_o,
+    en_rise_o          => en_rise_o,
     fall_ts_h_o        => fall_ts_h_write,
     fall_ts_l_o        => fall_ts_l_write,
     rise_ts_h_o        => rise_ts_h_write,
