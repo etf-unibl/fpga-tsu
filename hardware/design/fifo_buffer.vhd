@@ -101,6 +101,7 @@ begin
     if rst_i = '1' then
       head <= 0;
       tail <= 0;
+      data_out_temp <= (others => '0');
     elsif rising_edge(clk_i) then
       rdvalid_temp <= '0';
       if wren_i = '1' and full_temp = '0' then

@@ -55,6 +55,7 @@ entity counter is
   port(
     rst_i                : in  std_logic;                     --! Asynchronous reset input
     clk_i                : in  std_logic;                     --! Clock signal input
+    start_i              : in  std_logic;                     --! Start enable signal
     unix_start_value_i   : in  std_logic_vector(31 downto 0); --! Value to be written into the UNIX counter
     ts_high_o            : out std_logic_vector(31 downto 0); --! Output for Unix counter
     ts_low_o             : out std_logic_vector(31 downto 0)  --! Output for nanoseconds timer
@@ -80,10 +81,12 @@ begin
       ts_low_temp <= (others => '0');
       ts_high_temp <= (others => '0');
     elsif rising_edge(clk_i) then
-      ts_low_temp <= ts_low_temp + 20;
-      if ts_low_temp = "00111011100110101100101000000000" then
-        ts_high_temp <= ts_high_temp + 1;
-        ts_low_temp <= (others => '0');
+      if start_i = '1' then
+        ts_low_temp <= ts_low_temp + 20;
+        if ts_low_temp = "00111011100110101100101000000000" then
+          ts_high_temp <= ts_high_temp + 1;
+          ts_low_temp <= (others => '0');
+        end if;
       end if;
       if prev_unix_value /= unix_start_value_i then
         ts_high_temp <= unsigned(unix_start_value_i);

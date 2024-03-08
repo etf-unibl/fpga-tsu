@@ -103,7 +103,7 @@ architecture arch of timestamp_unit is
       start_i              : in  std_logic;
       unix_start_value_i   : in  std_logic_vector(31 downto 0);
       en_fall_o            : out std_logic;
-     en_rise_o            : out std_logic;
+      en_rise_o            : out std_logic;
       unix_time_o          : out std_logic_vector(31 downto 0);
       fall_ts_h_o          : out std_logic_vector(31 downto 0);
       fall_ts_l_o          : out std_logic_vector(31 downto 0);
@@ -292,7 +292,7 @@ begin
     rst_i        => reset_temp,
     data_i       => fall_ts_h_read,
     wren_i       => en_fall_write_temp,
-    rden_i       => fall_ts_h_read_en,
+    rden_i       => fall_ts_h_temp,
     data_o       => fifo_fall_ts_h_read,
     rdvalid_o    => valid_fall_high_o,
     empty_o      => empty_fall_high_o,
@@ -305,7 +305,7 @@ begin
     rst_i        => reset_temp,
     data_i       => fall_ts_l_read,
     wren_i       => en_fall_write_temp,
-    rden_i       => fall_ts_l_read_en,
+    rden_i       => fall_ts_l_temp,
     data_o       => fifo_fall_ts_l_read,
     rdvalid_o    => valid_fall_low_o,
     empty_o      => empty_fall_low_o,
@@ -318,7 +318,7 @@ begin
     rst_i        => reset_temp,
     data_i       => rise_ts_h_read,
     wren_i       => en_rise_write_temp,
-    rden_i       => rise_ts_h_read_en,
+    rden_i       => rise_ts_h_temp,
     data_o       => fifo_rise_ts_h_read,
     rdvalid_o    => valid_rise_high_o,
     empty_o      => empty_rise_high_o,
@@ -499,7 +499,7 @@ begin
         response_temp <= "11";
       end if;
         --! Writing into status register
-      if address_i /= "0001" then
+      if read_i /= '1' and write_i /= '1' then
         status_write <= status_internal;
       end if;
     end if;

@@ -17,6 +17,9 @@ architecture arch of tb_detection_logic is
 	signal rst_i : std_logic := '0';
     signal data_i : std_logic := '0';
     signal unix_start_value_i : std_logic_vector(31 downto 0) := (others => '0');
+	signal start : std_logic := '0';
+	signal en_fall : std_logic := '0';
+	signal en_rise : std_logic := '0';
 	signal unix_time_o : std_logic_vector(31 downto 0) := (others => '0');
 	signal fall_ts_h : std_logic_vector(31 downto 0) := (others => '0');
     signal fall_ts_l : std_logic_vector(31 downto 0) := (others => '0');
@@ -31,7 +34,10 @@ begin
      data_i => data_i,
 	 clk_i => clk_i,
 	 rst_i => rst_i,
+	 start_i => start,
 	 unix_start_value_i => unix_start_value_i,
+	 en_fall_o => en_fall,
+	 en_rise_o => en_rise,
 	 unix_time_o   => unix_time_o,
 	 fall_ts_h_o => fall_ts_h,
 	 fall_ts_l_o => fall_ts_l,
@@ -66,6 +72,7 @@ begin
 			info("TEST CASE: Unix time value set");
 			info("--------------------------------------------------------------------------------");
 			wait until rst_i = '0';
+			start <= '1';
 			unix_start_value_i <= std_logic_vector(to_unsigned(10, 32));
 			wait until rising_edge(clk_i);
 			wait for 10 ns;
@@ -88,6 +95,7 @@ begin
 			info("--------------------------------------------------------------------------------");
 			
 			wait until rst_i = '0';
+			start <= '1';
 			wait until rising_edge(clk_i);
 			wait for 10 ns;
 			
@@ -138,6 +146,7 @@ begin
 			
 			wait until rst_i = '0';
 			unix_start_value_i <= std_logic_vector(to_unsigned(10, 32));  -- set initial unix time to 10
+			start <= '1';
 			wait until rising_edge(clk_i);
 			wait for 10 ns;
 			
@@ -187,6 +196,7 @@ begin
 			info("--------------------------------------------------------------------------------");
 			
 			wait until rst_i = '0';
+			start <= '1';
 			wait until rising_edge(clk_i);
 			wait for 10 ns;
 			
@@ -239,6 +249,7 @@ begin
 			info("--------------------------------------------------------------------------------");
 			
 			wait until rst_i = '0';
+			start <= '1';
 			unix_start_value_i <= std_logic_vector(to_unsigned(1000, 32));
 			wait until rising_edge(clk_i);
 			wait for 10 ns;
